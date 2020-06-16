@@ -41,3 +41,6 @@ https://docs.microsoft.com/en-ca/python/api/overview/azure/containerinstance?vie
 
 container sample
 https://github.com/Azure-Samples/aci-docs-sample-python
+
+full list of samples on Github
+https://github.com/Azure/azure-sdk-for-python/tree/master/sdk
