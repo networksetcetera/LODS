@@ -35,3 +35,7 @@ https://docs.microsoft.com/en-ca/azure/developer/python/azure-sdk-example-virtua
 tested
 .. runs ok in "terminal"
 .. did not run in VS Code (probably because azure module was not yet installed)
+
+Other examples will be here
+https://docs.microsoft.com/en-ca/python/api/overview/azure/containerinstance?view=azure-python
+
