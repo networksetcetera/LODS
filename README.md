@@ -29,5 +29,6 @@ code .  ..ok
 
 https://docs.microsoft.com/en-ca/azure/developer/python/
 
-
+Specific to Lab 5
+https://docs.microsoft.com/en-ca/azure/developer/python/azure-sdk-example-virtual-machines?tabs=cmd
 
