@@ -18,3 +18,16 @@ M11/L01 – Send and receive messages from a Service Bus queue. Also see this fo
 
 jun 15
 looking at M05
+used instructor AZ-204
+https://docs.microsoft.com/en-ca/azure/developer/python/configure-local-development-environment?tabs=cmd#required-components
+installed Python with the latest download
+*** be sure to select "add to path" option
+used "terminal"
+az --version ..ok
+python --version ..ok
+code .  ..ok
+
+https://docs.microsoft.com/en-ca/azure/developer/python/
+
+
+
