@@ -39,3 +39,5 @@ tested
 Other examples will be here
 https://docs.microsoft.com/en-ca/python/api/overview/azure/containerinstance?view=azure-python
 
+container sample
+https://github.com/Azure-Samples/aci-docs-sample-python
