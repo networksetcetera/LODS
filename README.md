@@ -32,3 +32,6 @@ https://docs.microsoft.com/en-ca/azure/developer/python/
 Specific to Lab 5
 https://docs.microsoft.com/en-ca/azure/developer/python/azure-sdk-example-virtual-machines?tabs=cmd
 
+tested
+.. runs ok in "terminal"
+.. did not run in VS Code (probably because azure module was not yet installed)
