@@ -15,3 +15,6 @@ M02/L02 – Create an HTTP trigger
 M05/L01 – Create an Azure VM
 11 – Asynchronously processing messages by using Azure Storage
 M11/L01 – Send and receive messages from a Service Bus queue. Also see this for guidance.
+
+jun 15
+looking at M05
