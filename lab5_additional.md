@@ -1,13 +1,12 @@
 ---
 title: Provision a virtual machine using the Azure SDK libraries for Python
 description: How to provision an Azure virtual machine using Python and the Azure SDK management libraries.
-ms.date: 05/29/2020
-ms.topic: conceptual
+
 ---
 
 # Example: Use the Azure libraries to provision a virtual machine
 
-This example demonstrates how to use the Azure SDK management libraries in a Python script to create a resource group that contains a Linux virtual machine. ([Equivalent Azure CLI commands](#for-reference-equivalent-azure-cli-commands) are given at the later in this article.)
+This example demonstrates how to use the Azure SDK management libraries in a Python script to create a resource group that contains a Linux virtual machine. 
 
 All the commands in this article work the same in Linux/Mac OS bash and Windows command shells unless noted.
 
@@ -16,9 +15,20 @@ All the commands in this article work the same in Linux/Mac OS bash and Windows 
 
 ## 1: Set up your local development environment
 
-If you haven't already, follow all the instructions on [Configure your local Python dev environment for Azure](configure-local-development-environment.md).
+1. Download and install Python 
+> [!NOTE]
+> Be sure to select _add to path_ option during the installation. You can also add the option after by re-running the installation of Python
 
-Be sure to create a service principal for local development, and create and activate a virtual environment for this project.
+1. Open a command prompt and check your installation of Python by running
+
+``` cmd
+python --version
+```
+
+1. Check the availabity of the Azure CLI by typing
+```bash
+az --version
+```
 
 ## 2: Install the needed Azure library packages
 
@@ -193,16 +203,6 @@ vm_result = poller.result()
 print(f"Provisioned virtual machine {vm_result.name}")
 ```
 
-This code uses the CLI-based authentication methods (`get_client_from_cli_profile`) because it demonstrates actions that you might otherwise do with the Azure CLI directly. In both cases you're using the same identity for authentication.
-
-To use such code in a production script (for example, to automate VM management), use `DefaultAzureCredential` (recommended) or a service principal based method as describe in [How to authenticate Python apps with Azure services](azure-sdk-authenticate.md).
-
-### Reference links for classes used in the code
-
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [NetworkManagementClient (azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient?view=azure-python)
-- [ComputeManagementClient (azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient?view=azure-python)
-
 ## 4. Run the script
 
 ```cmd
@@ -217,90 +217,4 @@ Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureE
 
 ![Azure portal page for the new resource group showing the virtual machine and related resources](media/azure-sdk-example-virtual-machines/portal-vm-resources.png)
 
-### For reference: equivalent Azure CLI commands
 
-# [cmd](#tab/cmd)
-
-```azurecli
-rem Provision the resource group
-
-az group create -n PythonAzureExample-VM-rg -l centralus
-
-rem Provision a virtual network and subnet
-
-az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
-    --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
-    --subnet-prefix 10.0.0.0/24
-
-rem Provision a public IP address
-
-az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
-    --allocation-method Dynamic --version IPv4
-
-rem Provision a network interface client
-
-az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
-    --subnet python-example-subnet -n python-example-nic ^
-    --public-ip-address python-example-ip
-
-rem Provision the virtual machine
-
-az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
-    --nics python-example-nic --image UbuntuLTS ^
-    --admin-username azureuser --admin-password ChangePa$$w0rd24
-```
-
-# [bash](#tab/bash)
-
-```azurecli
-# Provision the resource group
-
-az group create -n PythonAzureExample-VM-rg -l centralus
-
-# Provision a virtual network and subnet
-
-az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet \
-    --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet \
-    --subnet-prefix 10.0.0.0/24
-
-# Provision a public IP address
-
-az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip \
-    --allocation-method Dynamic --version IPv4
-
-# Provision a network interface client
-
-az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet \
-    --subnet python-example-subnet -n python-example-nic \
-    --public-ip-address python-example-ip
-
-# Provision the virtual machine
-
-az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" \
-    --nics python-example-nic --image UbuntuLTS \
-    --admin-username azureuser --admin-password ChangePa$$w0rd24
-
-```
-
----
-
-## 6: Clean up resources
-
-```azurecli
-az group delete -n PythonAzureExample-VM-rg
-```
-
-Run this command if you don't need to keep the resources created in this example and would like to avoid ongoing charges in your subscription.
-
-## See also
-
-- [Example: Provision a resource group](azure-sdk-example-resource-group.md)
-- [Example: Provision Azure Storage](azure-sdk-example-storage.md)
-- [Example: Use Azure Storage](azure-sdk-example-storage-use.md)
-- [Example: Provision a web app and deploy code](azure-sdk-example-web-app.md)
-- [Example: Provision and query a database](azure-sdk-example-database.md)
-
-The following resources container more comprehensive examples using Python to create a virtual machine:
-
-- [Create and manage Windows VMs in Azure using Python](/azure/virtual-machines/windows/python). You can use this example to create Linux VMs by changing the `storage_profile` parameter.
-- [Azure Virtual Machines Management Samples - Python](https://github.com/Azure-Samples/virtual-machines-python-manage) (GitHub). The sample demonstrates additional management operations like starting and restarting a VM, stopping and deleting a VM, increasing the disk size, and managing data disks.
