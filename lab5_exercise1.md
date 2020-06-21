@@ -1,17 +1,9 @@
----
-title: Provision a virtual machine using the Azure SDK libraries for Python
-description: How to provision an Azure virtual machine using Python and the Azure SDK management libraries.
 
----
 
-# Example: Use the Azure libraries to provision a virtual machine
+# Exercise 1: Use the Azure libraries to provision a virtual machine
 
 This example demonstrates how to use the Azure SDK management libraries in a Python script to create a resource group that contains a Linux virtual machine. 
 
-All the commands in this article work the same in Linux/Mac OS bash and Windows command shells unless noted.
-
-> 
-> Provisioning a virtual machine through code is a multi-step process that involves provisioning a number of other resources that the virtual machine requires. If you're simply running such code from the command line, it's much easier to use the [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) command, which automatically provisions these secondary resources with defaults for any setting you choose to omit. The only required arguments are a resource group, VM name, image name, and login credentials. For more information, see [Quick Create a virtual machine with the Azure CLI](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create).
 
 ## 1: Set up your local development environment
 
@@ -19,13 +11,12 @@ All the commands in this article work the same in Linux/Mac OS bash and Windows 
 > 
 > Be sure to select _add to path_ option during the installation. You can also add the option after by re-running the installation of Python
 
-1. Open a command prompt and check your installation of Python by running
-
+2. Open a command prompt and check your installation of Python by running
 ``` cmd
 python --version
 ```
 
-1. Check the availabity of the Azure CLI by typing
+3. Check the availabity of the Azure CLI by typing
 ```bash
 az --version
 ```
