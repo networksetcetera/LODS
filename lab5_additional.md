@@ -10,13 +10,13 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 
 All the commands in this article work the same in Linux/Mac OS bash and Windows command shells unless noted.
 
-> [!NOTE]
+> 
 > Provisioning a virtual machine through code is a multi-step process that involves provisioning a number of other resources that the virtual machine requires. If you're simply running such code from the command line, it's much easier to use the [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) command, which automatically provisions these secondary resources with defaults for any setting you choose to omit. The only required arguments are a resource group, VM name, image name, and login credentials. For more information, see [Quick Create a virtual machine with the Azure CLI](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create).
 
 ## 1: Set up your local development environment
 
 1. Download and install Python 
-> [!NOTE]
+> 
 > Be sure to select _add to path_ option during the installation. You can also add the option after by re-running the installation of Python
 
 1. Open a command prompt and check your installation of Python by running
@@ -215,6 +215,6 @@ The provisioning process takes a few minutes to complete.
 
 Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureExample-VM-rg" resource group, and note the virtual machine, virtual disk, network security group, public IP address, network interface, and virtual network:
 
-![Azure portal page for the new resource group showing the virtual machine and related resources](media/azure-sdk-example-virtual-machines/portal-vm-resources.png)
+
 
 
