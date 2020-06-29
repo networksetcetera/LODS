@@ -42,6 +42,8 @@ https://docs.microsoft.com/en-ca/python/api/overview/azure/containerinstance?vie
 container sample
 https://github.com/Azure-Samples/aci-docs-sample-python
 
+
+
 full list of samples on Github
 https://github.com/Azure/azure-sdk-for-python/tree/master/sdk
 
@@ -49,3 +51,15 @@ June 21
 For the rest of Lab 5 focus on Exercise 3 (less on Exercise 2)
 .. deploy ane existing container image
 .. use one from Docker Hub or as indicated by the code samples
+
+
+June 22-28 > AWS exam
+
+June 29
+
+Looking at my fork of Lab 11
+
+https://github.com/networksetcetera/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_11_lab.md
+
+looks like we should build it from scratch like CA video demo
+
