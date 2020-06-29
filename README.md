@@ -63,3 +63,5 @@ https://github.com/networksetcetera/AZ-204-DevelopingSolutionsforMicrosoftAzure/
 
 looks like we should build it from scratch like CA video demo
 
+https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues
+
