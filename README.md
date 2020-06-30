@@ -96,3 +96,5 @@ Changed from .NET to Python
 Platform has to be Linux
 
 also installed node.js with chocolatey option
+
+you can choose the shell in VS Code = terminal + choose default shell
