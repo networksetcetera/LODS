@@ -84,7 +84,7 @@ https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-stor
 Demo 11
 https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples
 
-You can get the demo scripts from AZ-203 here
+You can get the demo scripts from AZ-203 here (taken from AZ-204 courseware)
 
 You can list environment variables like this in Powershell (used for sample code)
 Get-ChildItem Env:
