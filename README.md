@@ -88,3 +88,9 @@ You can get the demo scripts from AZ-203 here (taken from AZ-204 courseware)
 
 You can list environment variables like this in Powershell (used for sample code)
 Get-ChildItem Env:
+
+
+Lab 2 - Functions
+
+Changed from .NET to Python
+Platform has to be Linux
