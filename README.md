@@ -94,3 +94,5 @@ Lab 2 - Functions
 
 Changed from .NET to Python
 Platform has to be Linux
+
+also installed node.js with chocolaty option
