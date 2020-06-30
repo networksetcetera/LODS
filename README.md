@@ -65,3 +65,6 @@ looks like we should build it from scratch like CA video demo
 
 https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues
 
+add VS Code
+https://code.visualstudio.com/docs/python/python-on-azure
+
