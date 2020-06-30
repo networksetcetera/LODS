@@ -63,8 +63,18 @@ https://github.com/networksetcetera/AZ-204-DevelopingSolutionsforMicrosoftAzure/
 
 looks like we should build it from scratch like CA video demo
 
+This is more relevant to the "demo" which refers to **Service Bus Queues**
 https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues
 
-add VS Code
+added VS Code and got it to work as an editor and for running Python code
+also got venv to work
 https://code.visualstudio.com/docs/python/python-on-azure
+
+Lab 11 is focussed on **Storage Queues** so this example is more relevant
+https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue
+
+start with 
+pip install azure-storage-queue
+
+
 
