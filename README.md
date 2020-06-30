@@ -76,5 +76,9 @@ https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-stor
 start with 
 pip install azure-storage-queue
 
+writing to the queue works
+
+reading and deleting is here:https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py
+
 
 
