@@ -67,7 +67,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Create new**, enter **ManagedPlatform**, and then select **OK**.
     
-    1.  In the **Instance Details** section and the **Name** text box, enter a _unique name_ for your Web App.    **Note:** _This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps._
+    1.  In the **Instance Details** section and the **Name** text box, enter a _unique name_ for your Web App.  _This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps._
         
     1.  In the **Publish** field, confirm the default selction of **Code**.
     
@@ -79,7 +79,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **App Service Plan** section, leave the default name for **Linux Plan**.
     
-    1.  In the **Sku and size** field, select **F1**. **Note:** _To select the F1 tier, select Change size to open the Spec Picker wizard. On the Dev / Test tab, select F1 from the list, then select Apply._
+    1.  In the **Sku and size** field, select **F1**.  _To select the F1 tier, select Change size to open the Spec Picker wizard. On the Dev / Test tab, select F1 from the list, then select Apply._
     
     1.  Select **Review + Create**.
     
