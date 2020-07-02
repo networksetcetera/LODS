@@ -110,6 +110,7 @@ Demo 11
 https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples
 
 You can get the **demo scripts** from AZ-203 here (taken from AZ-204 courseware)
+https://github.com/networksetcetera/AZ203T00
 
 You can list environment variables like this in Powershell (used for sample code)
 Get-ChildItem Env:
