@@ -1,10 +1,4 @@
----
-lab:
-    title: 'Lab: Building a web application on Azure platform as a service offerings'
-    az204Module: 'Module 01: Creating Azure App Service Web Apps'
-    az020Module: 'Module 01: Creating Azure App Service Web Apps'
-    type: 'Answer Key'
----
+
 
 # Lab: Building a web application on Azure platform as a service offerings
 # Student lab answer key
@@ -37,11 +31,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 -   File Explorer
 
--   Windows PowerShell
-
 -   Visual Studio Code
 
-### Exercise 1: Build a back-end API by using Azure Storage and the Web Apps feature of Azure App Service
+### Exercise 1: Build a Python Web Apps using the Azure Portal
 
 #### Task 1: Open the Azure portal
 
@@ -55,19 +47,19 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: If this is your first time signing in to the Azure portal, a dialog box will display offering a tour of the portal. Select **Get Started** to skip the tour and begin using the portal.
 
-#### Task 2: Create a Storage account
+#### Task 2: Create a Web App
 
 1.  In the Azure portal's navigation pane, select **All services**.
 
-1.  From the **All services** blade, select **Storage Accounts**.
+1.  From the **All services** blade, select **Web**.
 
-1.  From the **Storage accounts** blade, get your list of storage account instances.
+1.  Select **App Services** from the list.
 
-1.  From the **Storage accounts** blade, select **Add**.
+1.  Select **Add** to create a new Web App.
 
-1.  From the **Create storage account** blade, observe the tabs from the blade, such as **Basics**, **Tags**, and **Review + Create**.
+1.  From the **Create Web App** blade, observe the tabs from the blade, such as **Basics**, **Monitoring**, **Tags**, and **Review + Create**.
 
-    > **Note**: Each tab represents a step in the workflow to create a new storage account. At any time, you can select **Review + Create** to skip the remaining tabs.
+    > **Note**: Each tab represents a step in the workflow to create a new Web App. At any time, you can select **Review + Create** to skip the remaining tabs.
 
 1.  Select the **Basics** tab, and in the tab area, perform the following actions:
     
@@ -75,7 +67,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Create new**, enter **ManagedPlatform**, and then select **OK**.
     
-    1.  In the **Storage account name** text box, enter **imgstor*[yourname]***.
+    1.  In the Instance Details section and the **Name** text box, enter a unique name for your Web App.
+    
+    > **Note**: This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps.
     
     1.  In the **Location** list, select the **(US) East US** region.
     
