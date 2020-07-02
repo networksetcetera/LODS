@@ -30,7 +30,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 -   File Explorer
 
--   Windows Terminal
+-   Visual Studio Code
 
 ### Exercise 1: Create Azure resources
 
@@ -142,9 +142,11 @@ In this exercise, you created all the resources that you'll use for this lab.
 
 ### Exercise 2: Create a function that's triggered by an HTTP request
 
-> **Note**: The interface for Azure Functions has been updated. Also, as of this writing, Python Functions is supported only in Visual Studio Code._ 
+> **Note**: The interface for Azure Functions has been updated. Also, as of this writing, Python Functions is supported only in Visual Studio Code.
 
-#### Task 1: Create an HTTP-triggered function
+#### Task 1: Create an HTTP-triggered function using Visual Studio Code and Python
+
+1.  Open **Visual Studio Code** and install the _Azure Functions_ extension
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
 
