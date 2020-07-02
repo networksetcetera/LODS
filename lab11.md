@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab: Asynchronously processing messages by using Azure Queue storage'
-    az204Module: 'Module 11: Develop message-based solutions'
-    az020Module: 'Module 10: Develop message-based solutions'
----
 
 # Lab: Asynchronously processing messages by using Azure Storage Queues
 # Student lab manual
@@ -16,9 +10,9 @@ You're studying various ways to communicate between isolated service components 
 
 After you complete this lab, you will be able to:
  
--   Add **Azure.Storage** libraries from NuGet.
+-   Add **Azure.Storage** libraries.
  
--   Create a queue in Python.
+-   Create a queue.
  
 -   Produce a new message in the queue by using Python.
  
@@ -88,7 +82,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 In this exercise, you created a new Storage account that you'll use through the remainder of the lab.
 
-### Exercise 2: Configure the Azure Storage SDK in a .NET project 
+### Exercise 2: Configure the Azure Storage libraries in a Python project 
 
 #### Task 1: Create a .NET project
 
