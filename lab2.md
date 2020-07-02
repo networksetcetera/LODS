@@ -142,7 +142,7 @@ In this exercise, you created all the resources that you'll use for this lab.
 
 ### Exercise 2: Create a function that's triggered by an HTTP request
 
-> **Note**: The interface for Azure Functions has been updated. Also, as of this writing, Python Functions is supported only in Visual Studio Code.
+> **Note**: The interface for Azure Functions has been updated. Also, as of this writing, Python Functions are supported only in Visual Studio Code.
 
 #### Task 1: Create an HTTP-triggered function using Visual Studio Code and Python
 
