@@ -108,13 +108,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Use existing**, and then select **Serverless** in the list.
     
-    1.  In the **Function app name** text box, enter _funclogic*[yourname]_.
+    1.  In the **Function app name** text box, enter _funclogic[yourname]_.
 
     1.  In the **Publish** section, select **Code**.
 
-    1.  In the **Runtime stack** drop-down list, select **.NET Core**.
+    1.  In the **Runtime stack** drop-down list, select **Python**.
 
-    1.  In the **Version** drop-down list, select **3.1**.
+    1.  In the **Version** drop-down list, select **3.8**.
 
     1.  In the **Region** drop-down list, select the **East US** region.
     
@@ -122,9 +122,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  On the **Hosting** tab, perform the following actions:
 
-    1.  In the **Storage account** drop-down list, select the **funcstor*[yourname]*** storage account that you created earlier in this lab.
+    1.  In the **Storage account** drop-down list, select the _funcstor_[yourname]_ storage account that you created earlier in this lab.
 
-    1.  In the **Operating System** section, select **Windows**.
+    1.  In the **Operating System** section, select **Linux**. (notice that the **Windows** option is not available)
 
     1.  In the **Plan type** drop-down list, select the **Consumption** option.
 
