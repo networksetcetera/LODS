@@ -67,19 +67,23 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Create new**, enter **ManagedPlatform**, and then select **OK**.
     
-    1.  In the Instance Details section and the **Name** text box, enter a unique name for your Web App. **Note**: This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps.
+    1.  In the **Instance Details** section and the **Name** text box, enter a _unique name_ for your Web App.    **Note:** _This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps._
+        
+    1.  In the **Publish** field, confirm the default selction of **Code**.
+    
+    1.  In the **Runtime stack** dropdown list, select **Python 3.8**.
+    
+    1.  For the **Operating System** selection, note that **Linux** is the only allowed option.
     
     1.  In the **Location** list, select the **(US) East US** region.
     
-    1.  In the **Performance** section, select **Standard**.
+    1.  In the **App Service Plan** section, leave the default name for **Linux Plan**.
     
-    1.  In the **Account kind** list, select **StorageV2 (general purpose v2)**.
-    
-    1.  In the **Replication** list, select **Locally-redundant storage (LRS)**.
-    
-    1.  In the **Access tier (default)** section, ensure that **Hot** is selected.
+    1.  In the **Sku and size** field, select **F1**. **Note:** _To select the F1 tier, select Change size to open the Spec Picker wizard. On the Dev / Test tab, select F1 from the list, then select Apply._
     
     1.  Select **Review + Create**.
+    
+
 
 1.  From the **Review + Create** tab, review the options that you specified in the previous steps.
 
