@@ -115,7 +115,7 @@ You can list environment variables like this in Powershell (used for sample code
 Get-ChildItem Env:
 
 
-Lab 2 - Functions
+Lab 02 - Functions
 
 Changed from .NET to Python
 Platform has to be Linux
