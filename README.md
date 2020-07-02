@@ -16,7 +16,33 @@ M05/L01 demo – Create an Azure VM
 11 – Asynchronously processing messages by using Azure Storage
 M11/L01 demo – Send and receive messages from a Service Bus queue..
 
-jun 15
+
+https://docs.microsoft.com/en-us/azure/developer/python/
+
+https://docs.microsoft.com/en-ca/learn/certifications/exams/az-204 (scroll)
+
+Lab 01
+https://docs.microsoft.com/en-ca/learn/modules/host-a-web-app-with-azure-app-service/6-exercise-deploy-your-code-to-app-service?pivots=python
+
+June 10
+
+Lab 05
+
+https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_05_lab_ak.md
+
+https://docs.microsoft.com/en-ca/azure/developer/python/azure-sdk-example-virtual-machines?tabs=cmd
+
+https://docs.microsoft.com/en-ca/samples/azure-samples/resource-manager-python-template-deployment/resource-manager-python-template-deployment/
+
+https://docs.microsoft.com/en-ca/samples/browse/?term=python%20deploy%20vm
+
+
+See also Github notes here:
+
+https://github.com/networksetcetera/LODS
+
+
+June  15
 looking at M05
 used instructor AZ-204
 https://docs.microsoft.com/en-ca/azure/developer/python/configure-local-development-environment?tabs=cmd#required-components
@@ -84,7 +110,7 @@ https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-stor
 Demo 11
 https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples
 
-You can get the demo scripts from AZ-203 here (taken from AZ-204 courseware)
+You can get the **demo scripts** from AZ-203 here (taken from AZ-204 courseware)
 
 You can list environment variables like this in Powershell (used for sample code)
 Get-ChildItem Env:
@@ -98,6 +124,8 @@ Platform has to be Linux
 also installed node.js with chocolatey option
 
 you can choose the shell in VS Code = terminal + choose default shell
+
+See screenshots in **images** 
 
 July 2
 
