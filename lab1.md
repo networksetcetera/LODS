@@ -67,9 +67,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Create new**, enter **ManagedPlatform**, and then select **OK**.
     
-    1.  In the Instance Details section and the **Name** text box, enter a unique name for your Web App.
-    
-    > **Note**: This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps.
+    1.  In the Instance Details section and the **Name** text box, enter a unique name for your Web App. **Note**: This name will be part of the app's URL: appname.azurewebsites.net. The name you choose must be unique among all Azure web apps.
     
     1.  In the **Location** list, select the **(US) East US** region.
     
