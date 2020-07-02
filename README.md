@@ -12,15 +12,16 @@ Titles are:
 #### 05 – Deploying Compute Workloads by using Images and Containers ,  M05/L01 demo – Create an Azure VM (2 demos)
 #### 11 – Asynchronously processing messages by using Azure Storage , M11/L01 demo – Send and receive messages from a Service Bus queue (1 demo)
 
-
+## POC links
 https://docs.microsoft.com/en-us/azure/developer/python/
 
 https://docs.microsoft.com/en-ca/learn/certifications/exams/az-204 (scroll)
 
+
 Lab 01
 https://docs.microsoft.com/en-ca/learn/modules/host-a-web-app-with-azure-app-service/6-exercise-deploy-your-code-to-app-service?pivots=python
 
-June 10
+## June 10
 
 Lab 05
 
@@ -38,7 +39,7 @@ See also Github notes here:
 https://github.com/networksetcetera/LODS
 
 
-June  15
+## June  15
 looking at M05
 used instructor AZ-204
 https://docs.microsoft.com/en-ca/azure/developer/python/configure-local-development-environment?tabs=cmd#required-components
@@ -69,15 +70,15 @@ https://github.com/Azure-Samples/aci-docs-sample-python
 full list of samples on Github
 https://github.com/Azure/azure-sdk-for-python/tree/master/sdk
 
-June 21
+## June 21
 For the rest of Lab 5 focus on Exercise 3 (less on Exercise 2)
 .. deploy ane existing container image
 .. use one from Docker Hub or as indicated by the code samples
 
 
-June 22-28 > AWS exam
+## June 22-28 > AWS exam
 
-June 29
+## June 29
 
 Looking at my fork of Lab 11
 
@@ -123,7 +124,7 @@ you can choose the shell in VS Code = terminal + choose default shell
 
 See screenshots in **images** 
 
-July 2
+## July 2
 
 Consolidate labs, POC for demos
 
