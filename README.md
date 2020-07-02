@@ -7,14 +7,14 @@ Labs we are looking at
 
 Titles are:
 
-01 – Building a Web Application on Azure PaaS
-M01/L02 demo – Create a Web App (3 demos)
-02 – Implement Task Processing Logic by using Azure Functions
-M02/L02 demo – Create an HTTP trigger (1 demo)
-05 – Deploying Compute Workloads by using Images and Containers
-M05/L01 demo – Create an Azure VM (2 demos)
-11 – Asynchronously processing messages by using Azure Storage
-M11/L01 demo – Send and receive messages from a Service Bus queue (1 demo)
+# 01 - Building a Web Application on Azure PaaS
+# M01/L02 demo – Create a Web App (3 demos)
+# 02 -Implement Task Processing Logic by using Azure Functions
+# M02/L02 demo – Create an HTTP trigger (1 demo)
+# 05 – Deploying Compute Workloads by using Images and Containers
+# M05/L01 demo – Create an Azure VM (2 demos)
+# 11 – Asynchronously processing messages by using Azure Storage
+# M11/L01 demo – Send and receive messages from a Service Bus queue (1 demo)
 
 
 https://docs.microsoft.com/en-us/azure/developer/python/
