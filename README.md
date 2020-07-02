@@ -7,7 +7,7 @@ Labs we are looking at
 
 Titles are:
 
-# 01 - Building a Web Application on Azure PaaS
+### 01 - Building a Web Application on Azure PaaS
 # M01/L02 demo – Create a Web App (3 demos)
 # 02 -Implement Task Processing Logic by using Azure Functions
 # M02/L02 demo – Create an HTTP trigger (1 demo)
