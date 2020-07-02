@@ -66,7 +66,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Create new**, enter **Serverless**, and then select **OK**.
     
-    1.  In the **Storage account name** text box, enter **funcstor[yourname]**.
+    1.  In the **Storage account name** text box, enter _funcstor[yourname]_.
     
     1.  In the **Location** list, select the **(US) East US** region.
     
@@ -108,7 +108,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     1.  In the **Resource group** section, select **Use existing**, and then select **Serverless** in the list.
     
-    1.  In the **Function app name** text box, enter **funclogic*[yourname]***.
+    1.  In the **Function app name** text box, enter _funclogic*[yourname]_.
 
     1.  In the **Publish** section, select **Code**.
 
@@ -142,13 +142,15 @@ In this exercise, you created all the resources that you'll use for this lab.
 
 ### Exercise 2: Create a function that's triggered by an HTTP request
 
+_Note: The interface for Azure Functions has been updated. Also, as of this writing, Python Functions is supported only in Visual Studio Code._ 
+
 #### Task 1: Create an HTTP-triggered function
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
 
 1.  On the **Resource groups** blade, find and then select the **Serverless** resource group that you created earlier in this lab.
 
-1.  On the **Serverless** blade, select the **funclogic*[yourname]*** function app that you created earlier in this lab.
+1.  On the **Serverless** blade, select the _funclogic[yourname]_ function app that you created earlier in this lab.
 
 1.  From the **App Service** blade, select the **Functions** option from the **Functions** section.
 
