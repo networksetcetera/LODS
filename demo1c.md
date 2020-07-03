@@ -13,7 +13,8 @@ This demo shows you how to deploy your app to Azure App Service from a local Git
 
     Later in the demo you'll be entering more commands in the Git Bash window so be sure to leave it open.
     
-2.  Go to the folder an inspect the files
+2.  Go to the folder and inspect the files
+
     ```bash
     cd python-docs-hello-world
     ```
@@ -46,66 +47,61 @@ In the Cloud Shell run the following commands to create the web app and the nece
     ```bash
     az webapp create --name <MyUniqueApp> --resource-group <MyResourceGroup> --plan <MyPlan>  --deployment-local-git
     ```
+   >**Note:** You should record the name that you used to create the web app <MyUniqueApp> as it will be used later for deployment of the code.
+    
+4.  Use the Azure portal to confirm that the web app was created.  Open the Azure Portal in a browser at _portal.azure.com_ and use the top search bar with the keywords _app service_.  You should now see the web app that you created in the previous step. Click on the **App Service** to see the Overview.
 
-## Deploy with Kudu build server
 
-We'll be configuring and using the Kudu build server for deployments in this demo. FTP and local Git can deploy to an Azure web app by using a deployment user. Once you configure your deployment user, you can use it for all your Azure deployments. Your account-level deployment username and password are different from your Azure subscription credentials.
+## Deploy with az webapp up
 
-The first two steps in this section are performed in the Cloud Shell, the third is performed in the local Git Bash window.
+We'll be configuring and using the Flask server for deployments in this demo. Local Git can deploy to an Azure web app by using **az webapp up**. 
 
-1. Configure a deployment user.
+   >**Note:** Return to **Git Bash** to perform these steps
+
+1. Configure a web application and run it locally using **Flask**.
     
     ```bash
-    az webapp deployment user set \ 
-        --user-name <username> \
-        --password <password>
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    export FLASK_APP=application.py
+    flask run
     ```
+2. Open a web browser, and go to the sample app at http://localhost:5000/. The app displays the message Hello World!.
 
-    * The username must be unique within Azure, and for local Git pushes, must not contain the ‘@’ symbol.
-    * The password must be at least eight characters long, with two of the following three elements: letters, numbers, and symbols.
-    * The JSON output shows the password as `null`. If you get a '`Conflict'. Details: 409` error, change the username. If you get a `'Bad Request'. Details: 400 error`, use a stronger password.
+   >**Note:** This web page is being served by the local Flask web app server.  We will deploy the same code to Azure later in the demonstration.
 
-    Record your username and password to use to deploy your web apps.
-
-2. Get the web app deployment URL, the deployment URL is used in the Git Bash window to connect your local Git repository to the web app:
+3. While in the **Git Bash** shell, login to your Azure account.
 
     ```bash
-    az webapp deployment source config-local-git --name <MyUniqueApp> --resource-group <MyResourceGroup>
+    az login
     ```
-
-    The command will return JSON similar to the example below, you'll use the URL in the Git Bash window in the next step.
-
-    ```json
-    {
-    "url": "https://<deployment-user>@<MyUniqueApp>.scm.azurewebsites.net/<MyUniqueApp>.git"
-    }
-    ```
-
-3. Deploy the web app:
-
-    **This step is performed in the local Git Bash window left open from earlier in the demo.** 
     
-    Use the `cd` command to change in to the directory where the `html-docs-hello-world` was cloned. 
+    >**Note:**  A new browser tab will open in Internet Edge.  You will be asked to login using your Azure account credentials.
+
+4. Return to the **Git Bash** prompt. Make sure that you are in the _python-docs-hello-world_ folder. Now you can use **az webapp up** to deploy your Python code to the Azure web app:
+
+    ```bash
+    az webapp up --sku F1 -n <MyUniqueApp>
+    ```
+
+5. Observe the running web app.  Browse to the deployed application in your web browser at the URL http://<MyUniqueApp>.azurewebsites.net.
+The Python sample code is running a Linux container in the App Service using a built-in image.
     
-    Use the following command to connect the repository to the Web App:
+    >**Note:** You can also use the Azure Portal to inspect your running web app.  Go back to the Azure Portal and select **Properties** in the left navigation for the web app.  Click on the URL for the running web app.  A new browser tab should open showing the running web app
+    
+    >**Note:** The web app code uses HTTP whereas the web app **browse** link under **overview** will go to HTTPS
 
-    ```bash
-    git remote add azure <url>
-    ```
 
-    Use the following command to push the to the Azure remote:
-
-    ```bash
-    git push azure master
-    ```
+    
 
 ### What happens to my app during deployment?
 
-All the officially supported deployment methods make changes to the files in the `/home/site/wwwroot` folder of your app. These files are the same ones that are run in production. Therefore, the deployment can fail because of locked files. The app in production may also behave unpredictably during deployment, because not all the files updated at the same time. There are a few different ways to avoid these issues:
-
-* Stop your app or enable offline mode for your app during deployment. 
-* Deploy to a staging slot with auto swap enabled.
-* Use Run From Package instead of continuous deployment.
+The az webapp up command does the following actions:
+-Create a default resource group.
+-Create a default app service plan.
+-Create an app with the specified name.
+-Zip deploy files from the current working directory to the app.
 
 ## Verify results
 
