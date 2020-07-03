@@ -23,6 +23,9 @@ https://docs.microsoft.com/en-ca/learn/certifications/exams/az-204 (scroll)
 Lab 01
 https://docs.microsoft.com/en-ca/learn/modules/host-a-web-app-with-azure-app-service/6-exercise-deploy-your-code-to-app-service?pivots=python
 
+https://docs.microsoft.com/en-ca/azure/app-service/containers/quickstart-python?tabs=bash
+
+
 ## June 10
 
 Lab 05
