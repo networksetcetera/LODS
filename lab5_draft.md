@@ -40,16 +40,20 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 
 ## 1: Set up your local development environment
 
+1. Open a command prompt using Windows **Start** and type **cmd**
 
 1. Open a command prompt and check your installation of Python by running
     ``` cmd
     python --version
     ```
-
+1. Change to the directory **F:/allfiles/labs/05/starter**
+    ``` cmd
+    cd F:/allfiles/labs/05/starter
+    ```
 1. Check the availabity of the Azure CLI by typing
-```bash
-az --version
-```
+    ```bash
+    az --version
+    ```
 
 ## 2: Install the needed Azure library packages
 
