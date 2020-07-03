@@ -169,12 +169,20 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  Return to the first **Cloud Shell** in the Azure Portal. Stop the Flask web server by using **CTRL-C** in the **Cloud Shell** session 
 
 
-#### Task 6: Deploy an Python web application to Web Apps using **az webapp up**
+#### Task 6: Deploy a Python web application to Web Apps
 
-1.  On the taskbar, select the **Visual Studio Code** icon.
+1.  In the Azure Portal open a **Cloud Shell** 
 
-1.  From the **File** menu, select **Open Folder**.
-
+1.  We will gather some information about our web app resource. Enter the following commands to store the information 
+    ```bash
+    APPNAME=$(az webapp list --query [0].name --output tsv)
+    APPRG=$(az webapp list --query [0].resourceGroup --output tsv)
+    APPPLAN=$(az appservice plan list --query [0].name --output tsv)
+    APPSKU=$(az appservice plan list --query [0].sku.name --output tsv)
+    APPLOCATION=$(az appservice plan list --query [0].location --output tsv)
+    ```
+    >**Note:** you can check the stored values by using the _echo_ command in Bash
+    
 1.  In the **File Explorer** window, browse to **Allfiles (F):\\Allfiles\\Labs\\01\\Starter\\API**, and then select **Select Folder**.
 
 1.  In the Explorer pane of the **Visual Studio Code** window, expand the **Controllers** folder, and then select the **ImagesController.cs** file to open the file in the editor.
@@ -251,7 +259,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 #### Review
 
-In this exercise, you created a web app in Azure and then deployed your ASP.NET web application to Web Apps by using the Azure CLI and Apache Kudu zip file deployment utility.
+In this exercise, you created a web app in Azure and then deployed your Python web application to Web Apps by using **az webapp up**.
 
 ### Exercise 2: Build a front-end web application by using Azure Web Apps
 
