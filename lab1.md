@@ -146,7 +146,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     pip freeze > requirements.txt
     ```
 
-#### Task 5: Test the web application in the Cloud Shell
+#### Task 5: Test the web application using a Flask web server in the Cloud Shell
 
 1.  From your **Cloud Shell** session, run the following commands to start your web application:
     ```bash
@@ -169,7 +169,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  Return to the first **Cloud Shell** in the Azure Portal. Stop the Flask web server by using **CTRL-C** in the **Cloud Shell** session 
 
 
-#### Task 6: Deploy an ASP.NET web application to Web Apps
+#### Task 6: Deploy an Python web application to Web Apps using **az webapp up**
 
 1.  On the taskbar, select the **Visual Studio Code** icon.
 
