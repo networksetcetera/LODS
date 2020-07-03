@@ -467,7 +467,7 @@ Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureE
 
 In this exercise, you created a .NET console application to display a machine’s current IP address. You then added the **Dockerfile** file to the application so that it could be converted into a Docker container image. Finally, you deployed the container image to Container Registry.
 
-### Exercise 3: Deploy an Azure container instance 
+### Exercise 3: Deploy an Azure container instance using Python
 
 #### Task 1: Enable the admin user in Container Registry
 
