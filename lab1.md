@@ -93,11 +93,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.	Select the **Go to resource** button from the **Deployment** blade to go to the newly created Web App.
 
-1.	From the **Storage account** blade, find the **Settings** section, and then select **Access keys**.
-
-1.	From the **Access keys** blade, select any one of the keys, and then record the value of either of the **Connection string** boxes. You'll use this value later in this lab.
-
-    > **Note**: This is just an empty slot for your Web Application.  The resulting web page will display a default page for creating new content using Python. You will still need to add some sample code 
+    > **Note**: This is just an empty slot for your Web Application.  You will still need to add some sample code in other lab steps.
 
 
 #### Task 3: Configure the web app
@@ -106,29 +102,15 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  From the **Resource groups** blade, select the **ManagedPlatform** resource group that you created earlier in this lab.
 
-1.  From the **ManagedPlatform** blade, select the **imgapi*[yourname]*** web app that you created earlier in this lab.
+1.  From the **ManagedPlatform** blade, select the web app that you created earlier in this lab.
 
-1.  From the **Web App** blade, in the **Settings** section, select the **Configuration** link.
-
-1.  In the **Configuration** section, perform the following actions:
-    
-    1.  Select the **Application settings** tab, and then select **New application setting**.
-    
-    1.  In the **Add/Edit application setting** pop-up dialog, in the **Name** text box, enter **StorageConnectionString**.
-    
-    1.  In the **Value** text box, enter the storage connection string that you copied earlier in this lab.
-    
-    1.  Leave the **Deployment slot setting** text box set to its default value, and then select **OK** to close the pop-up dialog and return to the **Configuration** section.
-    
-    1.  Select **Save** from the blade to persist your settings.
-  
-    Wait for your application settings to persist before you move forward with the lab.
+1.  From the **Web App** blade, in the **Overview** section, select the **Browse** link. This will open a new browser tab. The placeholder page that loads indicates that your web app is up and running and ready to receive deployment of your app's code.
 
 1.  From the **Web App** blade in the **Settings** section, select the **Properties** link.
 
 1.  In the **Properties** section, copy the value of the **URL** text box. You'll use this value later in the lab.
 
-    > **Note**: At this point, the web server at this URL will return a 404 error. You have not deployed any code to the Web App yet. You will deploy code to the Web App later in this lab.
+    > **Note**: 
 
 #### Task 6: Deploy an ASP.NET web application to Web Apps
 
