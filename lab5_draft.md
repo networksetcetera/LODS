@@ -1,9 +1,4 @@
----
-lab:
-    title: 'Lab: Deploying compute workloads by using images and containers'
-    az204Module: 'Module 05: Implement IaaS solutions'
-    type: 'Answer Key'
----
+
 
 # Lab: Deploying compute workloads by using images and containers
 # Student lab answer key
@@ -36,167 +31,214 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 -   File Explorer
 
-### Exercise 1: Create a VM by using the Azure Command-Line Interface (CLI)
 
-#### Task 1: Open the Azure portal
 
-1.  On the taskbar, select the **Microsoft Edge** icon.
+# Exercise 1: Use the Azure libraries to provision a virtual machine
 
-1.  In the open browser window, go to the Azure portal (<https://portal.azure.com>).
+This example demonstrates how to use the Azure SDK management libraries in a Python script to create a resource group that contains a Linux virtual machine. 
 
-1.  Enter the email address for your Microsoft account, and then select **Next**.
 
-1.  Enter the password for your Microsoft account, and then select **Sign in**.
+## 1: Set up your local development environment
 
-    > **Note**: If this is your first time signing in to the Azure portal, you will be offered a tour of the portal. Select **Get Started** to begin using the portal.
 
-#### Task 2: Create a resource group
-
-1.  In the Azure portal's navigation pane, select the **Create a resource** link.
-
-    > **Note**: If you can't find the **Create a resource** link, the **Create a resource** icon is a plus sign (+) character from the portal.
-
-1.  From the **New** blade, find the **Search the Marketplace** text box above the list of featured services.
-
-1.  In the search box, enter the text **Resource Group**, and then select Enter.
-
-1.  From the **Marketplace** search results blade, select the **Resource group** result.
-
-1.  From the **Resource group** blade, select **Create**.
-
-1.  From the additional **Resource group** blade, find the tabs from the blade, such as **Basics**.
-
-    > **Note**: Each tab represents a step in the workflow to create a new resource group. You can select **Review + Create** at any time to skip the remaining tabs.
-
-1.  From the **Basics** tab, perform the following actions:
-    
-    1.  Leave the **Subscription** text box set to its default value.
-    
-    1.  In the **Resource group** text box, enter the value **ContainerCompute**.
-    
-    1.  In the **Region** drop-down list, select the **(US) East US** location.
-    
-    1.  Select **Review + Create**.
-
-1.  From the **Review + Create** tab, review the options that you selected during the previous steps.
-
-1.  Select **Create** to create the resource group by using your specified configuration.  
-
-    > **Note**: Wait for the creation task to complete before moving forward with this lab.
-
-#### Task 3: Open Azure Cloud Shell
-
-1.  In the portal, select the **Cloud Shell** icon to open a new shell instance.
-
-    > **Note**: The **Cloud Shell** icon is represented by a greater than sign () and underscore character (\_).
-
-1.  If this is your first time opening Cloud Shell using your subscription, you can use the **Welcome to Azure Cloud Shell Wizard** to configure Cloud Shell for first-time usage. Perform the following actions in the wizard:
-    
-    1.  A dialog box prompts you to create a new storage account to begin using the shell. Accept the default settings, and then select **Create storage**. 
-
-    > **Note**: Wait for Cloud Shell to finish its initial setup procedures before moving forward with the lab. If you don't notice the **Cloud Shell** configuration options, this is most likely because you're using an existing subscription with this course's labs. The labs are written with the presumption that you're using a new subscription.
-
-1.  At the **Cloud Shell** command prompt in the portal, enter the following command, and then select Enter to get the version of the Azure CLI tool:
-
-    ```
-    az --version
+1. Open a command prompt and check your installation of Python by running
+    ``` cmd
+    python --version
     ```
 
-#### Task 4: Use the Azure CLI commands
+1. Check the availabity of the Azure CLI by typing
+```bash
+az --version
+```
 
-1.  Enter the following command, and then select Enter to get a list of subgroups and commands at the root level of the CLI:
+## 2: Install the needed Azure library packages
 
-    ```
-    az --help
-    ```
+1. Create a *requirements.txt* file that lists the management libraries used in this example:
 
-1.  Enter the following command, and then select Enter to get a list of subgroups and commands for Azure Virtual Machines:
-
-    ```
-    az vm --help
-    ```
-
-1.  Enter the following command, and then select Enter to get a list of arguments and examples for the **Create Virtual Machine** command:
-
-    ```
-    az vm create --help
+    ```txt
+    azure-mgmt-resource
+    azure-mgmt-network
+    azure-mgmt-compute
+    azure-cli-core
     ```
 
-1.  Enter the following command, and then select Enter to create a new **virtual machine** with the following settings:
-    
-    -	Resource group: **ContainerCompute**
+1. In your terminal or command prompt with the virtual environment activated, install the management libraries listed in *requirements.txt*:
 
-    -	Name: **quickvm**
-
-    -	Image: **Debian**
-
-    -	Username: **Student**
-
-    -	Password: **StudentPa55w.rd**
-
-    ```
-    az vm create --resource-group ContainerCompute --name quickvm --image Debian --admin-username student --admin-password StudentPa55w.rd
+    ```cmd
+    pip install -r requirements.txt
     ```
 
-    > **Note**: Wait for the VM creation process to complete. After the process completes, the command will return a JSON file containing details about the machine.
+## 3: Write code to provision a virtual machine
 
-1.  Enter the following command, and then select Enter to get a more detailed JavaScript Object Notation (JSON) file that contains various metadata about the newly created VM:
+Create a Python file named *provision_vm.py* with the following code. The comments explain the details:
 
-    ```
-    az vm show --resource-group ContainerCompute --name quickvm
-    ```
+```python
+# Import the needed management objects from the libraries. The azure.common library
+# is installed automatically with the other libraries.
+from azure.common.client_factory import get_client_from_cli_profile
+from azure.mgmt.resource import ResourceManagementClient
+from azure.mgmt.network import NetworkManagementClient
+from azure.mgmt.compute import ComputeManagementClient
 
-1.  Enter the following command, and then select Enter to list all the IP addresses associated with the VM:
+print(f"Provisioning a virtual machine...some operations might take a minute or two.")
 
-    ```
-    az vm list-ip-addresses --resource-group ContainerCompute --name quickvm
-    ```
+# Step 1: Provision a resource group
 
-1.  Enter the following command, and then select Enter to filter the output to only return the first IP address value:
+# Obtain the management object for resources, using the credentials from the CLI login.
+resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
-    ```
-    az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv
-    ```
+# Constants we need in multiple places: the resource group name and the region
+# in which we provision resources. You can change these values however you want.
+RESOURCE_GROUP_NAME = "PythonAzureExample-VM-rg"
+LOCATION = "centralus"
 
-1.  Enter the following command, and then select Enter to store the results of the previous command in a new Bash shell variable named *ipAddress*:
+# Provision the resource group.
+rg_result = resource_client.resource_groups.create_or_update(RESOURCE_GROUP_NAME,
+    {
+        "location": LOCATION
+    }
+)
 
-    ```
-    ipAddress=$(az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv)
-    ```
 
-1.  Enter the following command, and then select Enter to render the value of the Bash shell variable *ipAddress*:
+print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} region")
 
-    ```
-    echo $ipAddress
-    ```
+# For details on the previous code, see Example: Provision a resource group
+# at https://docs.microsoft.com/azure/developer/python/azure-sdk-example-resource-group
 
-1.  Enter the following command, and then select Enter to connect to the VM that you created earlier in this lab by using the Secure Shell (SSH) tool and the IP address stored in the Bash shell variable *ipAddress*:
+# Step 2: provision a virtual network
 
-    ```
-    ssh student@$ipAddress
-    ```
+# A virtual machine requires a network interface client (NIC). A NIC requires
+# a virtual network and subnet along with an IP address. Therefore we must provision
+# these downstream components first, then provision the NIC, after which we
+# can provision the VM.
 
-1.  The SSH tool will first inform you that the authenticity of the host can’t be established and then ask if you want to continue connecting. Enter **yes**, and then select Enter to continue connecting to the VM.
+# Network and IP address names
+VNET_NAME = "python-example-vnet"
+SUBNET_NAME = "python-example-subnet"
+IP_NAME = "python-example-ip"
+IP_CONFIG_NAME = "python-example-ip-config"
+NIC_NAME = "python-example-nic"
 
-1.  The SSH tool will then ask you for a password. Enter **StudentPa55w.rd**, and then select Enter to authenticate with the VM.
+# Obtain the management object for networks
+network_client = get_client_from_cli_profile(NetworkManagementClient)
 
-1.  After connecting to the VM by using SSH, enter the following command, and then select Enter to get metadata describing the Linux VM:
+# Provision the virtual network and wait for completion
+poller = network_client.virtual_networks.create_or_update(RESOURCE_GROUP_NAME,
+    VNET_NAME,
+    {
+        "location": LOCATION,
+        "address_space": {
+            "address_prefixes": ["10.0.0.0/16"]
+        }
+    }
+)
 
-    ```
-    uname -a
-    ```
+vnet_result = poller.result()
 
-1.  Use the **exit** command to end your SSH session:
+print(f"Provisioned virtual network {vnet_result.name} with address prefixes {vnet_result.address_space.address_prefixes}")
 
-    ```
-    exit
-    ```
+# Step 3: Provision the subnet and wait for completion
+poller = network_client.subnets.create_or_update(RESOURCE_GROUP_NAME, 
+    VNET_NAME, SUBNET_NAME,
+    { "address_prefix": "10.0.0.0/24" }
+)
+subnet_result = poller.result()
 
-1.  Close the Cloud Shell pane in the portal.
+print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {subnet_result.address_prefix}")
 
-#### Review
+# Step 4: Provision an IP address and wait for completion
+poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME,
+    IP_NAME,
+    {
+        "location": LOCATION,
+        "sku": { "name": "Standard" },
+        "public_ip_allocation_method": "Static",
+        "public_ip_address_version" : "IPV4"
+    }
+)
 
-In this exercise, you used Cloud Shell to create a VM as part of an automated script.
+ip_address_result = poller.result()
+
+print(f"Provisioned public IP address {ip_address_result.name} with address {ip_address_result.ip_address}")
+
+# Step 5: Provision the network interface client
+poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
+    NIC_NAME, 
+    {
+        "location": LOCATION,
+        "ip_configurations": [ {
+            "name": IP_CONFIG_NAME,
+            "subnet": { "id": subnet_result.id },
+            "public_ip_address": {"id": ip_address_result.id }
+        }]
+    }
+)
+
+nic_result = poller.result()
+
+print(f"Provisioned network interface client {nic_result.name}")
+
+# Step 6: Provision the virtual machine
+
+# Obtain the management object for virtual machines
+compute_client = get_client_from_cli_profile(ComputeManagementClient)
+
+VM_NAME = "ExampleVM"
+USERNAME = "azureuser"
+PASSWORD = "ChangePa$$w0rd24"
+
+print(f"Provisioning virtual machine {VM_NAME}; this operation might take a few minutes.")
+
+# Provision the VM specifying only minimal arguments, which defaults to an Ubuntu 18.04 VM
+# on a Standard DS1 v2 plan with a public IP address and a default virtual network/subnet.
+
+poller = compute_client.virtual_machines.create_or_update(RESOURCE_GROUP_NAME, VM_NAME,
+    {
+        "location": LOCATION,
+        "storage_profile": {
+            "image_reference": {
+                "publisher": 'Canonical',
+                "offer": "UbuntuServer",
+                "sku": "16.04.0-LTS",
+                "version": "latest"
+            }
+        },
+        "hardware_profile": {
+            "vm_size": "Standard_DS1_v2"
+        },
+        "os_profile": {
+            "computer_name": VM_NAME,
+            "admin_username": USERNAME,
+            "admin_password": PASSWORD
+        },
+        "network_profile": {
+            "network_interfaces": [{
+                "id": nic_result.id,
+            }]
+        }
+    }
+)
+
+vm_result = poller.result()
+
+print(f"Provisioned virtual machine {vm_result.name}")
+```
+
+## 4. Run the script
+
+```cmd
+python provision_vm.py
+```
+
+The provisioning process takes a few minutes to complete.
+
+## 5. Verify the resources
+
+Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureExample-VM-rg" resource group, and note the virtual machine, virtual disk, network security group, public IP address, network interface, and virtual network:
+
+
+
+
 
 ### Exercise 2: Create a Docker container image and deploy it to Azure Container Registry
 
