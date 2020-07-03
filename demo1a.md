@@ -26,9 +26,9 @@ In this demo you will learn how to create a Web App by using the Azure Portal.
 
         * **Publish**: Select **Code** for this demo. 
 
-        * **Runtime Stack**: Select **.NET Core 3.0**.  Your choice here may affect whether you have a choice of operating system - for some runtime stacks, App Service supports only one operating system.
+        * **Runtime Stack**: Select **Python**.  Your choice here may affect whether you have a choice of operating system - for some runtime stacks, App Service supports only one operating system.
 
-        * **Operating System**: Keep **Windows** selected here, it's the default when you selected **.NET Core 3.0** above.
+        * **Operating System**: Notice **Linux** is selected here. The Python runtime stack is currently supported on Linux only.
         * **Region**: Keep the default selection. 
 
     * App Service Plan
