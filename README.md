@@ -145,4 +145,5 @@ Looked over Labs and demos
 Add Martin, Tom (perhaps Bill) as private collaborators to repo
 https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/
 
-
+Consider Python example for Demo 1
+https://docs.microsoft.com/en-ca/azure/app-service/containers/quickstart-python?tabs=bash
