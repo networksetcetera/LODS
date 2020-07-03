@@ -146,7 +146,7 @@ Consolidate labs, POC for demos
 
 Looked over Labs and demos
 - some don't need modification
-- some need alot
+- some need alot (the rabbit holes)
 
 Add Martin, Tom (perhaps Bill) as private collaborators to repo
 https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/
@@ -155,3 +155,9 @@ Consider Python example for Demo 1
 https://docs.microsoft.com/en-ca/azure/app-service/containers/quickstart-python?tabs=bash
 
 
+## July 3
+
+Mount working labs in IDLx
+Try screen shot feature to improve clarity
+
+AWS POCs
