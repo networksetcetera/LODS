@@ -48,10 +48,10 @@ This demo is performed in the Cloud Shell using the Bash environment.
     az webapp up -n <app_name> -l <region> --html
     ```
 
-_NOTE: use this reference_
+_NOTE: you can use this reference for more information_
 https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-up
 
-    This command may take a few minutes to run. While running, it displays information similar to the example below. Make a note of the `resourceGroup` value. You need it for the clean up resources section.
+This command may take a few minutes to run. While running, it displays information similar to the example below. Make a note of the `resourceGroup` value. You need it for the clean up resources section.
 
     ```json
     {
