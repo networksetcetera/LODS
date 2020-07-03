@@ -96,7 +96,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     > **Note**: This is just an empty slot for your Web Application.  You will still need to add some sample code in other lab steps.
 
 
-#### Task 3: Configure the web app
+#### Task 3: Configure the Web App
 
 1.  In the Azure portal's navigation pane, select **Resource groups**.
 
@@ -111,6 +111,25 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  In the **Properties** section, copy the value of the **URL** text box. You'll use this value later in the lab.
 
 
+#### Task 4: Write code to implement a web application in Python
+
+1.  Open a **Cloud Shell**. Ensure that **Bash** mode is selected
+
+1.  Run the following commands to set up a virtual environment and install Flask in your profile:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install flask
+```
+
+1.  From the **ManagedPlatform** blade, select the web app that you created earlier in this lab.
+
+1.  From the **Web App** blade, in the **Overview** section, select the **Browse** link. This will open a new browser tab. The placeholder page that loads indicates that your web app is up and running and ready to receive deployment of your app's code.![default page](https://github.com/networksetcetera/LODS/blob/master/images/lab1/Screen%20Shot%202020-07-02%20at%206.01.40%20PM.png)
+
+1.  From the **Web App** blade in the **Settings** section, select the **Properties** link.
+
+1.  In the **Properties** section, copy the value of the **URL** text box. You'll use this value later in the lab.
 
 #### Task 6: Deploy an ASP.NET web application to Web Apps
 
