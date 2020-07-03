@@ -146,6 +146,29 @@ def hello():
 pip freeze > requirements.txt
 ```
 
+#### Task 5: Test the web application in the Cloud Shell
+
+1.  From your **Cloud Shell** session, run the following commands to start your web application:
+```bash
+cd ~/BestBikeApp
+export FLASK_APP=application.py
+flask run
+```
+1.  Open a second **Cloud Shell** in a new browser tab. Use _shell.azure.com_ and sign in with the same credentials you used for the Azure Portal.
+
+1.  In the second **Cloud Shell** type the following command to test the web application
+```bash
+curl http://127.0.0.1:5000/
+```
+1.  You should see the following displayed:
+```html
+<html><body><h1>Hello Best Bike App!</h1></body></html>
+```
+1.  Exit the second **Cloud Shell** by typing _exit_ and selecting _quit_
+
+1.  Return to the first **Cloud Shell** in the Azure Portal. Stop the Flask web server by using **CTRL-C** in the **Cloud Shell** session 
+
+
 #### Task 6: Deploy an ASP.NET web application to Web Apps
 
 1.  On the taskbar, select the **Visual Studio Code** icon.
