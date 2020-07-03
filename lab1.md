@@ -123,13 +123,35 @@ source venv/bin/activate
 pip install flask
 ```
 
-1.  From the **ManagedPlatform** blade, select the web app that you created earlier in this lab.
+1.  Run these commands in the Cloud Shell to create the directory for your new web app:
 
-1.  From the **Web App** blade, in the **Overview** section, select the **Browse** link. This will open a new browser tab. The placeholder page that loads indicates that your web app is up and running and ready to receive deployment of your app's code.![default page](https://github.com/networksetcetera/LODS/blob/master/images/lab1/Screen%20Shot%202020-07-02%20at%206.01.40%20PM.png)
+```bash
+mkdir ~/BestBikeApp
+cd ~/BestBikeApp
+```
+1.  Open the web-based Visual Studio Code editor to create and edit the application.py for your web app:
 
-1.  From the **Web App** blade in the **Settings** section, select the **Properties** link.
+```bash
+code application.py
+```
 
-1.  In the **Properties** section, copy the value of the **URL** text box. You'll use this value later in the lab.
+1.  Copy and paste the following Python code to create the main web app functionality:
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "<html><body><h1>Hello Best Bike App!</h1></body></html>\n"
+```
+1.  Save the file and exit the editor. You can save the file and exit the editor through the "..." menu on the top right
+
+1.  In order to deploy your application to Azure, you will need to save your list of application requirements in a requirements.txt file. To do so, run the following command:
+
+```bash
+pip freeze > requirements.txt
+```
 
 #### Task 6: Deploy an ASP.NET web application to Web Apps
 
