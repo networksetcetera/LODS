@@ -112,7 +112,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  In the **Properties** section, copy the value of the **URL** text box. You'll use this value later in the lab.
 
-    > **Note**: 
+
 
 #### Task 6: Deploy an ASP.NET web application to Web Apps
 
