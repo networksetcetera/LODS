@@ -161,3 +161,6 @@ Mount working labs in IDLx
 Try screen shot feature to improve clarity
 
 AWS POCs
+
+Key to LODS labs
+Module 05a (CLI) = raw instructions from MS/Github
