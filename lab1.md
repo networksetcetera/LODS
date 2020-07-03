@@ -104,9 +104,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  From the **ManagedPlatform** blade, select the web app that you created earlier in this lab.
 
-1.  From the **Web App** blade, in the **Overview** section, select the **Browse** link. This will open a new browser tab. The placeholder page that loads indicates that your web app is up and running and ready to receive deployment of your app's code.
-
-![default page](https://github.com/networksetcetera/LODS/blob/master/images/lab1/Screen%20Shot%202020-07-02%20at%206.01.40%20PM.png)
+1.  From the **Web App** blade, in the **Overview** section, select the **Browse** link. This will open a new browser tab. The placeholder page that loads indicates that your web app is up and running and ready to receive deployment of your app's code.![default page](https://github.com/networksetcetera/LODS/blob/master/images/lab1/Screen%20Shot%202020-07-02%20at%206.01.40%20PM.png)
 
 1.  From the **Web App** blade in the **Settings** section, select the **Properties** link.
 
