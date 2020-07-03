@@ -163,4 +163,11 @@ Try screen shot feature to improve clarity
 AWS POCs
 
 Key to LODS labs
+One Lab Series = AZ-204-MultiMan-Demo
+Three Lab Profiles
+AZ-204 Multi-Man (Demo) = toggle based on demo1a, 1b and 1c
 Module 05a (CLI) = raw instructions from MS/Github
+Module 05b (Python) = ??
+
+Typical link to demo
+https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/01-Demo_Create_a_WebApp_by_using_the_Azure_Portal.md
