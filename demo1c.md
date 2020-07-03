@@ -8,12 +8,19 @@ This demo shows you how to deploy your app to Azure App Service from a local Git
 1. To download a sample repository, run the following command in your Git Bash window:
 
     ```bash
-    git clone https://github.com/Azure-Samples/html-docs-hello-world.git
+    git clone git clone https://github.com/Azure-Samples/python-docs-hello-world
     ```
 
     Later in the demo you'll be entering more commands in the Git Bash window so be sure to leave it open.
+    
+2.  Go to the folder an inspect the files
+    ```bash
+    cd python-docs-hello-world
+    ```
+    
+    The repository contains an application.py file, which tells App Service that the code contains a Flask app. 
 
-2. Launch the Azure Cloud Shell and be sure to select the **Bash** environment.
+3. Launch the Azure Cloud Shell and be sure to select the **Bash** environment.
     * You can either launch the Cloud Shell through the portal (https://portal.azure.com),
 or by launching the shell directly (https://shell.azure.com).
 
