@@ -54,6 +54,11 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
     ```bash
     az --version
     ```
+1. Login to your Azure account
+    ```bash
+    az login
+    ```
+   >**Note:** You will be prompted for your Azure credentials
 
 ## 2: Install the needed Azure library packages
 
