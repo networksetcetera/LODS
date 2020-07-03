@@ -127,12 +127,10 @@ mkdir ~/BestBikeApp
 cd ~/BestBikeApp
 ```
 1.  Open the web-based Visual Studio Code editor to create and edit the application.py for your web app:
-
 ```bash
 code application.py
 ```
 1.  Copy and paste the following Python code to create the main web app functionality:
-
 ```python
 from flask import Flask
 app = Flask(__name__)
@@ -143,8 +141,7 @@ def hello():
 ```
 1.  Save the file and exit the editor. You can save the file and exit the editor through the "..." menu on the top right
 
-1.  In order to deploy your application to Azure, you will need to save your list of application requirements in a requirements.txt file. To do so, run the following command:
-
+1.  In order to deploy your application to Azure, you will need to save your list of application requirements in a requirements.txt file. To do so, run the following command
 ```bash
 pip freeze > requirements.txt
 ```
