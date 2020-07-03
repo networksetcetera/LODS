@@ -102,6 +102,10 @@ https://code.visualstudio.com/docs/python/python-tutorial
 
 **NOTE** the syntax is slightly different for Python in **Visual Studio Code** vs Python in the Azure **Cloud Shell**
 
+https://code.visualstudio.com/docs/python/environments   
+
+.venv   vs   venv  and also **conda**
+
 Lab 11 is focussed on **Storage Queues** so this example is more relevant
 https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue
 
