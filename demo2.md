@@ -1,4 +1,4 @@
-# Demo: Create an HTTP trigger function by using the Azure portal
+# Demo: Create an HTTP trigger function in Python by using the Visual Studio Code
 
 In this demo, you'll learn how to use Functions to create a "hello world" function in the Azure portal. This demo has two main steps:
 
