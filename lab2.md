@@ -149,10 +149,11 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 #### Task 1: Create an HTTP-triggered function using Visual Studio Code and Python
 
 1.  Open **Visual Studio Code** and install the _Azure Functions_ extension
+    ![extension installed](https://github.com/networksetcetera/LODS/blob/master/images/lab2/Screen%20Shot%202020-06-30%20at%2010.29.49%20AM.png)
 
-1.  In the Azure portal's navigation pane, select the **Resource groups** link.
+1.  Connect to your Azure account in **Visual Studio Code**
 
-1.  On the **Resource groups** blade, find and then select the **Serverless** resource group that you created earlier in this lab.
+1.  In **Visual Studio Code** open the folder on the F: drive for Lab05/starter 
 
 1.  On the **Serverless** blade, select the _funclogic[yourname]_ function app that you created earlier in this lab.
 
