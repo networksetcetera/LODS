@@ -87,7 +87,7 @@ We'll be configuring and using the Flask server for deployments in this demo. Lo
 
 ## Verify results
 
-1. Observe the running web app.  Browse to the deployed application in your web browser at the URL http://<MyUniqueApp>.azurewebsites.net.
+1. Observe the running web app.  Browse to the deployed application in your web browser at the URL http://MyUniqueApp.azurewebsites.net.
 The Python sample code is running a Linux container in the App Service using a built-in image.
     
     >**Note:** You can also use the Azure Portal to inspect your running web app.  Go back to the Azure Portal and select **Properties** in the left navigation for the web app.  Click on the URL for the running web app.  A new browser tab should open showing the running web app
