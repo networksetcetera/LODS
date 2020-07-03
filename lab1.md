@@ -116,15 +116,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  Open a **Cloud Shell**. Ensure that **Bash** mode is selected
 
 1.  Run the following commands to set up a virtual environment and install Flask in your profile:
-
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install flask
 ```
-
 1.  Run these commands in the Cloud Shell to create the directory for your new web app:
-
 ```bash
 mkdir ~/BestBikeApp
 cd ~/BestBikeApp
@@ -134,7 +131,6 @@ cd ~/BestBikeApp
 ```bash
 code application.py
 ```
-
 1.  Copy and paste the following Python code to create the main web app functionality:
 
 ```python
