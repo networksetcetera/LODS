@@ -98,10 +98,10 @@ The Python sample code is running a Linux container in the App Service using a b
 ### What happens to my app during deployment?
 
 The az webapp up command does the following actions:
--Create a default resource group.
--Create a default app service plan.
--Create an app with the specified name.
--Zip deploy files from the current working directory to the app.
+- Create a default resource group.
+- Create a default app service plan.
+- Create an app with the specified name.
+- Zip deploy files from the current working directory to the app.
 
 ## Verify results
 
