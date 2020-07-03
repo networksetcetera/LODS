@@ -55,7 +55,7 @@ This command may take a few minutes to run. While running, it displays informati
 
 2. Open a browser and navigate to the app URL (`http://<app_name>.azurewebsites.net`) and verify the app is running. Leave the browser open on the app for the next section.
 
-![view the running Web App](https://github.com/networksetcetera/AZ203T00/blob/master/images/Screen%20Shot%202020-05-31%20at%202.12.34%20PM.png)
+![view the running Web App](https://github.com/networksetcetera/LODS/blob/master/images/demo1/Screen%20Shot%202020-07-03%20at%2012.36.17%20AM.png)
 
 ## Update and redeploy the app
 
