@@ -87,97 +87,20 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  From the **Review + Create** tab, review the options that you specified in the previous steps.
 
-1.  Select **Create** to create the storage account by using your specified configuration.
+1.  Select **Create** to create the Web App by using your specified configuration.
 
 1.  From the **Deployment** blade, wait for the creation task to complete before moving forward with this lab.
 
-1.	Select the **Go to resource** button from the **Deployment** blade to go to the newly created storage account.
+1.	Select the **Go to resource** button from the **Deployment** blade to go to the newly created Web App.
 
 1.	From the **Storage account** blade, find the **Settings** section, and then select **Access keys**.
 
 1.	From the **Access keys** blade, select any one of the keys, and then record the value of either of the **Connection string** boxes. You'll use this value later in this lab.
 
-    > **Note**: It doesn't matter which connection string you choose. They are interchangeable.
+    > **Note**: This is just an empty slot for your Web Application.  The resulting web page will display a default page for creating new content using Python. You will still need to add some sample code 
 
-#### Task 3: Upload a sample blob
 
-1.  In the Azure portal's navigation pane, select **Resource groups**.
-
-1.  From the **Resource groups** blade, select the **ManagedPlatform** resource group that you created earlier in this lab.
-
-1.  From the **ManagedPlatform** blade, select the **imgstor*[yourname]*** storage account that you created earlier in this lab.
-
-1.  From the **Storage Account** blade, in the **Blob service** section, select the **Containers** link.
-
-1.  In the **Containers** section, select **+ Container**.
-
-1.  In the **New container** window, perform the following actions:
-    
-    1.  In the **Name** text box, enter **images**.
-    
-    1.  In the **Public access level** list, select **Blob (anonymous read access for blobs only)**, and then select **OK**.
-
-1.  In the **Containers** section, select the newly created **images** container.
-
-1.	From the **Container** blade, select **Upload**.
-
-1.	In the **Upload blob** window, perform the following actions:
-
-    1.  In the **Files** section, select the **Folder** icon.
-
-    1.  In the **File Explorer** window, browse to **Allfiles (F):\\Allfiles\\Labs\\01\\Starter\\Images**, select the **grilledcheese.jpg** file, and then select **Open**.
-
-    1.  Ensure that the **Overwrite if files already exist** check box is selected, and then select **Upload**. Wait for the blob to upload before you continue with this lab.
-
-#### Task 4: Create a web app
-
-1.  In the Azure portal's navigation pane, select **Create a resource**.
-
-1.  From the **New** blade, find the **Search the Marketplace** text box.
-
-1.  In the search box, enter **Web**, and then select Enter.
-
-1.  From the **Marketplace** search results blade, select the **Web App** result.
-
-1.  From the **Web App** blade, select **Create**.
-
-1.  From the second **Web App** blade, find the tabs from the blade, such as **Basics**.
-
-    > **Note**: Each tab represents a step in the workflow to create a new web app. You can select **Review + Create** at any time to skip the remaining tabs.
-
-1.  From the **Basics** tab, perform the following actions:
-    
-    1.  Leave the **Subscription** text box set to its default value.
-    
-    1.  In the **Resource group** drop-down list, select **ManagedPlatform**.
-    
-    1.  In the **Name** text box, enter **imgapi*[yourname]***.
-
-    1.  In the **Publish** section, select **Code**.
-
-    1.  In the **Runtime stack** drop-down list, select **.NET Core 3.1 (LTS)**.
-
-    1.  In the **Operating System** section, select **Windows**.
-
-    1.  In the **Region** drop-down list, select the **East US** region.
-
-    1.  In the **Windows Plan (East US)** section, select **Create new**, enter the value **ManagedPlan** in the **Name** text box, and then select **OK**.
-
-    1.  Leave the **SKU and size** section set to its default value.
-
-    1.  Select **Next: Monitoring**.
-
-1.  From the **Monitoring** tab, perform the following actions:
-
-    1.  In the **Enable Application Insights** section, select **No**.
-
-    1.  Select **Review + Create**.
-
-1.  From the **Review + Create** tab, review the options that you selected during the previous steps.
-
-1.  Select **Create** to create the web app by using your specified configuration. Wait for the creation task to complete before you move forward with this lab.
-
-#### Task 5: Configure the web app
+#### Task 3: Configure the web app
 
 1.  In the Azure portal's navigation pane, select **Resource groups**.
 
