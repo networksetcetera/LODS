@@ -114,7 +114,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     1.  In the **Runtime stack** drop-down list, select **Python**.
 
-    1.  In the **Version** drop-down list, select **3.8**.
+    1.  In the **Version** drop-down list, select **3.7**.
 
     1.  In the **Region** drop-down list, select the **East US** region.
     
@@ -138,11 +138,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 #### Review
 
-In this exercise, you created all the resources that you'll use for this lab.
+In this exercise, you created the Azure resources that you'll use for this lab.
 
-### Exercise 2: Create a function that's triggered by an HTTP request
+### Exercise 2: Create a function that's triggered by an HTTP request using Visual Studio Code
 
 > **Note**: The interface for Azure Functions has been updated. Also, as of this writing, Python Functions are supported only in Visual Studio Code.
+
+![Functions extension](https://github.com/networksetcetera/LODS/blob/master/images/lab2/Screen%20Shot%202020-06-30%20at%2010.37.02%20AM.png)
 
 #### Task 1: Create an HTTP-triggered function using Visual Studio Code and Python
 
