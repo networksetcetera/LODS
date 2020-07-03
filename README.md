@@ -138,6 +138,8 @@ you can choose the shell in VS Code = terminal + choose default shell
 
 See screenshots in **images** 
 
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python
+
 ## July 2
 
 Consolidate labs, POC for demos
@@ -151,3 +153,5 @@ https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a
 
 Consider Python example for Demo 1
 https://docs.microsoft.com/en-ca/azure/app-service/containers/quickstart-python?tabs=bash
+
+
