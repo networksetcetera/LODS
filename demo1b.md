@@ -53,21 +53,6 @@ https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webap
 
 This command may take a few minutes to run. While running, it displays information similar to the example below. Make a note of the `resourceGroup` value. You need it for the clean up resources section.
 
-    ```json
-    {
-    "app_url": "https://<app_name>.azurewebsites.net",
-    "location": "westeurope",
-    "name": "<app_name>",
-    "os": "Windows",
-    "resourcegroup": "appsvc_rg_Windows_westeurope",
-    "serverfarm": "appsvc_asp_Windows_westeurope",
-    "sku": "FREE",
-    "src_path": "/home/<username>/demoHTML/html-docs-hello-world ",
-    < JSON data removed for brevity. >
-    }
-    ```
-![deploy Web App using CLI](https://github.com/networksetcetera/AZ203T00/blob/master/images/Screen%20Shot%202020-05-31%20at%202.12.25%20PM.png)
-
 2. Open a browser and navigate to the app URL (`http://<app_name>.azurewebsites.net`) and verify the app is running. Leave the browser open on the app for the next section.
 
 ![view the running Web App](https://github.com/networksetcetera/AZ203T00/blob/master/images/Screen%20Shot%202020-05-31%20at%202.12.34%20PM.png)
