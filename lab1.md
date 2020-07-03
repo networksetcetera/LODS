@@ -116,35 +116,35 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  Open a **Cloud Shell**. Ensure that **Bash** mode is selected
 
 1.  Run the following commands to set up a virtual environment and install Flask in your profile:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install flask
-```
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install flask
+    ```
 1.  Run these commands in the Cloud Shell to create the directory for your new web app:
-```bash
-mkdir ~/BestBikeApp
-cd ~/BestBikeApp
-```
+    ```bash
+    mkdir ~/BestBikeApp
+    cd ~/BestBikeApp
+    ```
 1.  Open the web-based Visual Studio Code editor to create and edit the application.py for your web app:
 ```bash
 code application.py
 ```
 1.  Copy and paste the following Python code to create the main web app functionality:
-```python
+    ```python
 from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
     return "<html><body><h1>Hello Best Bike App!</h1></body></html>\n"
-```
+    ```
 1.  Save the file and exit the editor. You can save the file and exit the editor through the "..." menu on the top right
 
 1.  In order to deploy your application to Azure, you will need to save your list of application requirements in a requirements.txt file. To do so, run the following command
-```bash
+    ```bash
 pip freeze > requirements.txt
-```
+    ```
 
 #### Task 5: Test the web application in the Cloud Shell
 
