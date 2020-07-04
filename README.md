@@ -187,3 +187,4 @@ todo: break this down into chunks
 # Lab 2
 todo: timer trigger
 todo: integration
+Q - use httprepl with the Python Function endpoint
