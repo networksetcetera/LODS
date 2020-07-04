@@ -173,19 +173,22 @@ Typical link to demo
 https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/01-Demo_Create_a_WebApp_by_using_the_Azure_Portal.md
 
 Lab 11
-saved the workspace
-Fixed the create_queue() issue
-todo: write a step-by-step guide to setting up Python in **Visual Studio Code** 
-or
-todo: include this in the lab setup
+- saved the workspace
+- Fixed the create_queue() issue
+- todo: write a step-by-step guide to setting up Python in **Visual Studio Code** or todo: include this in the lab setup
 
 Lab 5
-now works in **Visual Studio Code**
-saved the workspace
-todo: break this down into chunks
+- now works in **Visual Studio Code**
+- saved the workspace
+- todo: break this down into chunks
 
 Lab 2
-todo: timer trigger - done
-todo: integration
-Q - use httprepl with the Python Function endpoint
-A - no. httprepl is .Net Core, simpler to work with direct URL endpoint
+- todo: timer trigger - done
+
+- use httprepl with the Python Function endpoint. httprepl is .Net Core, simpler to work with direct URL endpoint
+https://ciwchris.github.io/blog/20-using-the-dotnet-httprepl-tool.html
+https://devblogs.microsoft.com/aspnet/httprepl-a-command-line-tool-for-interacting-with-restful-http-services/
+https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=windows
+
+- todo: integration
+
