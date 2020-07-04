@@ -195,4 +195,8 @@ https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3
 - todo: integration, can leave this as .Net or find an integration example
 - this includes an integration example (queues)
 https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+- here is a good blog article about local testing
+https://www.scalyr.com/blog/azure-functions-in-python-a-simple-introduction/
+- main MS documentation
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python
 
