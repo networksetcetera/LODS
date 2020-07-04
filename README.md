@@ -169,6 +169,8 @@ Key to LODS labs
 - Module 05a (CLI) = raw instructions from MS/Github (screenshots)
 - Module 05b (Python) = Python version , currently Exercise 1
 
+- todo: create lab masters for other labs - done
+
 Typical link to demo
 https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/01-Demo_Create_a_WebApp_by_using_the_Azure_Portal.md
 
