@@ -157,10 +157,10 @@ https://docs.microsoft.com/en-ca/azure/app-service/containers/quickstart-python?
 
 ## July 3
 
-Mount working labs in IDLx
-Try screen shot feature to improve clarity
+Mount working labs in IDLx - done
+Try screen shot feature to improve clarity - done
 
-AWS POCs
+AWS POCs - created a lab series
 
 Key to LODS labs
 - One Lab Series = AZ-204-MultiMan-Demo
@@ -171,3 +171,10 @@ Key to LODS labs
 
 Typical link to demo
 https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/01-Demo_Create_a_WebApp_by_using_the_Azure_Portal.md
+
+# Lab 11
+
+Fixed the create_queue() issue
+write a step-by-step guide to setting up Python in **Visual Studio Code** 
+or
+include this in the lab setup
