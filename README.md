@@ -209,3 +209,8 @@ https://code.visualstudio.com/docs/python/tutorial-django
 https://code.visualstudio.com/docs/python/tutorial-flask
 
 - integration test successful. See funclogicxx3, GetSettingInfo and the run log in Azure. 3 successful calls
+
+# July 4
+
+The Azure CLI is written in Python
+https://www.python.org/success-stories/building-an-open-source-and-cross-platform-azure-cli-with-python/
