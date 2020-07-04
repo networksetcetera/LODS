@@ -201,8 +201,11 @@ https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverl
 https://www.scalyr.com/blog/azure-functions-in-python-a-simple-introduction/
 - main MS documentation
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python
+- Python Function sample
 
 - Python Django (web app framework)
 https://code.visualstudio.com/docs/python/tutorial-django
 - Python Flask (web app framework)
 https://code.visualstudio.com/docs/python/tutorial-flask
+
+- integration test successful. See GetSettingInfo and the run log in Azure. 3 successful calls
