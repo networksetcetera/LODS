@@ -185,7 +185,7 @@ Lab 5
 - todo: break this down into chunks
 
 Lab 2
-- todo: timer trigger - done
+- todo: timer trigger - done, see funclogicxx2, Recurring
 
 - use httprepl with the Python Function endpoint. httprepl is .Net Core, simpler to work with direct URL endpoint
 https://ciwchris.github.io/blog/20-using-the-dotnet-httprepl-tool.html
@@ -208,4 +208,4 @@ https://code.visualstudio.com/docs/python/tutorial-django
 - Python Flask (web app framework)
 https://code.visualstudio.com/docs/python/tutorial-flask
 
-- integration test successful. See GetSettingInfo and the run log in Azure. 3 successful calls
+- integration test successful. See funclogicxx3, GetSettingInfo and the run log in Azure. 3 successful calls
