@@ -175,11 +175,15 @@ https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/01-Demo
 # Lab 11
 saved the workspace
 Fixed the create_queue() issue
-write a step-by-step guide to setting up Python in **Visual Studio Code** 
+todo: write a step-by-step guide to setting up Python in **Visual Studio Code** 
 or
-include this in the lab setup
+todo: include this in the lab setup
 
-# Lab 1
+# Lab 5
 now works in **Visual Studio Code**
 saved the workspace
+todo: break this down into chunks
 
+# Lab 2
+todo: timer trigger
+todo: integration
