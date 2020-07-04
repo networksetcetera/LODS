@@ -192,5 +192,7 @@ https://ciwchris.github.io/blog/20-using-the-dotnet-httprepl-tool.html
 https://devblogs.microsoft.com/aspnet/httprepl-a-command-line-tool-for-interacting-with-restful-http-services/
 https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl?view=aspnetcore-3.1&tabs=windows
 
-- todo: integration
+- todo: integration, can leave this as .Net or find an integration example
+- this includes an integration example (queues)
+https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
 
