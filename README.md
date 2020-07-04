@@ -214,3 +214,4 @@ https://code.visualstudio.com/docs/python/tutorial-flask
 
 The Azure CLI is written in Python
 https://www.python.org/success-stories/building-an-open-source-and-cross-platform-azure-cli-with-python/
+https://pypi.org/project/azure-cli/
