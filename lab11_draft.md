@@ -54,7 +54,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  If this is your first time signing in to the Azure portal, you'll notice a dialog box offering a tour of the portal. Select **Get Started** to skip the tour.
 
-#### Task 2: Create a Storage account and a Storage Queue
+#### Task 2: Create a Storage account
 
 1.  Create a new storage account with the following details:
     
@@ -78,15 +78,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  Record the value of the **Connection string** text box. You'll use this value later in this lab.
 
-1.  Click **overview** in the left hand navigation of the storage account **asyncstor[yourname]** 
-
-1.  Select **queues** in the **overview** blade of the storage account 
-
-1.  Click **add queue**, type _messagequeue_ as the queue name and click **ok** 
 
 #### Review
 
-In this exercise, you created a new Storage Account and a Storage Queue that you'll use through the remainder of the lab.
+In this exercise, you created a new Storage Account that you'll use through the remainder of the lab.
 
 ### Exercise 2: Configure the Azure Storage libraries in a Python project 
 
