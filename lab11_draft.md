@@ -101,24 +101,23 @@ In this exercise, you created a new Storage Account that you'll use through the 
     azure-mgmt-storage
     azure-cli-core
     ```
+1.  Sign into your Azure account using a terminal in **Visual Studio Code**.
 
-1.  Using **Visual Studio Code**, create a new Python file named **MessageProcessor.py** in the current folder:
+1.  Choose your Python interpreter in **Visual Studio Code** by selecting the **command palette**.
+(https://code.visualstudio.com/docs/python/python-tutorial)
 
-1.  Using the same terminal, import version 12.0.0 of **Azure.Storage.Queues** from NuGet:
+1.  Using **Visual Studio Code**, create a new Python file named **MessageProcessor.py** in the current folder.
 
+1.  Using the Create a queue.
+
+    Add the following lines to your Python script
+    
+    ```python
+    from azure.storage.queue import QueueClient
+
+    queue = QueueClient.from_connection_string(conn_str="<connection_string>", queue_name="messagequeue")
+    queue.create_queue()
     ```
-    dotnet add package Azure.Storage.Queues --version 12.0.0
-    ```
-
-    > **Note**: The **dotnet add package** command will add the **Azure.Storage.Queues** package from NuGet. For more information, go to [Azure.Storage.Queues](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0).
-
-1.  Using the same terminal, build the .NET web application:
-
-    ```
-    dotnet build
-    ```
-
-1.  Close the current terminal.
 
 #### Task 2: Write code to access Azure Storage
 
