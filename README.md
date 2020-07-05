@@ -140,6 +140,15 @@ See screenshots in **images**
 
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python
 
+other links
+required for VS Coe Python extension
+https://dotnet.microsoft.com/download
+
+https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions
+
+link to my example
+https://funclogicmoko.azurewebsites.net/api/HttpTrigger1?name=fred
+
 ## July 2
 
 Consolidate labs, POC for demos
@@ -209,6 +218,8 @@ https://code.visualstudio.com/docs/python/tutorial-django
 https://code.visualstudio.com/docs/python/tutorial-flask
 
 - integration test successful. See funclogicxx3, GetSettingInfo and the run log in Azure. 3 successful calls
+
+
 
 # July 4
 
