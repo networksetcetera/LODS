@@ -1,6 +1,10 @@
 # LODS
 June contract
 
+Module 05b (Python): Deploying Compute Workloads by using Images and Containers (Python)
+https://labondemand.com/LabProfile/75239
+
+Module 05a (CLI): Deploying Compute Workloads by using Images and Containers
 https://labondemand.com/LabProfile/75231
 
 Labs we are looking at
