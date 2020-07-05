@@ -1,4 +1,4 @@
-# Demo: Create a Web App with a local Git deployment source
+# Demo: Create a Web App using Python
 
 This demo shows you how to deploy your app to Azure App Service from a local Git repository by using the Kudu build server and the Azure CLI. 
 
