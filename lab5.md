@@ -153,16 +153,16 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 
     Add these lines to the Python file *provision_vm.py*
     
-```python
-poller = network_client.subnets.create_or_update(RESOURCE_GROUP_NAME, 
-    VNET_NAME, SUBNET_NAME,
-    { "address_prefix": "10.0.0.0/24" }
-)
-subnet_result = poller.result()
+    ```python
+    poller = network_client.subnets.create_or_update(RESOURCE_GROUP_NAME, 
+        VNET_NAME, SUBNET_NAME,
+        { "address_prefix": "10.0.0.0/24" }
+    )
+    subnet_result = poller.result()
 
-print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {subnet_result.address_prefix}")
+    print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {subnet_result.address_prefix}")
 
-```
+    ```
 
 1.  Provision an IP address and wait for completion
 
