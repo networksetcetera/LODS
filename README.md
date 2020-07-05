@@ -252,3 +252,6 @@ https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-containe
 
 Lab02 - alternate
 https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+
+See Martin's suggestions
+https://github.com/networksetcetera/LODS/issues/1#issuecomment-653840527
