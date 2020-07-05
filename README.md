@@ -244,3 +244,11 @@ https://docs.microsoft.com/en-us/azure/developer/python/configure-local-developm
 - CMD prompt
 - venv
 
+Lab01 - alternate (from PyCon 2020)
+https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-app-service-on-linux-01
+
+Lab05 - alternate
+https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-containers-01
+
+Lab02 - alternate
+https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
