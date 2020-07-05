@@ -122,7 +122,7 @@ In this exercise, you created a new Storage Account that you'll use through the 
     queue.create_queue()
     ```
 
-1.  Update the **connection_string** string constant by setting its value to the **Connection string** of the storage account that you recorded earlier in this lab.
+1.  Update the **<connection_string>** string constant by setting its value to the **Connection string** of the storage account that you recorded earlier in this lab.
 
 #### Task 3: Validate Azure Storage access
 
