@@ -168,9 +168,9 @@ print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {sub
 
     Add these lines to the Python file *provision_vm.py*
 
-```python
+    ```python
 
-poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME,
+    poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME,
     IP_NAME,
     {
         "location": LOCATION,
@@ -178,18 +178,18 @@ poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME
         "public_ip_allocation_method": "Static",
         "public_ip_address_version" : "IPV4"
     }
-)
+    )
 
-ip_address_result = poller.result()
+    ip_address_result = poller.result()
 
-print(f"Provisioned public IP address {ip_address_result.name} with address {ip_address_result.ip_address}")
-```
+    print(f"Provisioned public IP address {ip_address_result.name} with address {ip_address_result.ip_address}")
+    ```
 1.  Provision the network interface client
 
     Add these lines to the Python file *provision_vm.py*
     
-```python
-poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
+    ```python
+    poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
     NIC_NAME, 
     {
         "location": LOCATION,
@@ -199,30 +199,30 @@ poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
             "public_ip_address": {"id": ip_address_result.id }
         }]
     }
-)
+    )
 
-nic_result = poller.result()
+    nic_result = poller.result()
 
-print(f"Provisioned network interface client {nic_result.name}")
-```
+    print(f"Provisioned network interface client {nic_result.name}")
+    ```
 1.  Provision the virtual machine
 
     Add these lines to the Python file *provision_vm.py*
     
-```python
-# Obtain the management object for virtual machines
-compute_client = get_client_from_cli_profile(ComputeManagementClient)
+    ```python
+    # Obtain the management object for virtual machines
+    compute_client = get_client_from_cli_profile(ComputeManagementClient)
 
-VM_NAME = "ExampleVM"
-USERNAME = "azureuser"
-PASSWORD = "ChangePa$$w0rd24"
+    VM_NAME = "ExampleVM"
+    USERNAME = "azureuser"
+    PASSWORD = "ChangePa$$w0rd24"
 
-print(f"Provisioning virtual machine {VM_NAME}; this operation might take a few minutes.")
+    print(f"Provisioning virtual machine {VM_NAME}; this operation might take a few minutes.")
 
-# Provision the VM specifying only minimal arguments, which defaults to an Ubuntu 18.04 VM
-# on a Standard DS1 v2 plan with a public IP address and a default virtual network/subnet.
+    # Provision the VM specifying only minimal arguments, which defaults to an Ubuntu 18.04 VM
+    # on a Standard DS1 v2 plan with a public IP address and a default virtual network/subnet.
 
-poller = compute_client.virtual_machines.create_or_update(RESOURCE_GROUP_NAME, VM_NAME,
+    poller = compute_client.virtual_machines.create_or_update(RESOURCE_GROUP_NAME, VM_NAME,
     {
         "location": LOCATION,
         "storage_profile": {
@@ -247,20 +247,23 @@ poller = compute_client.virtual_machines.create_or_update(RESOURCE_GROUP_NAME, V
             }]
         }
     }
-)
+    )
 
-vm_result = poller.result()
+    vm_result = poller.result()
 
-print(f"Provisioned virtual machine {vm_result.name}")
-```
+    print(f"Provisioned virtual machine {vm_result.name}")
+    ```
 
 ## 4. Run the script
 
+Type this at the command prompt and press **enter** to run the Python script
 ```cmd
 python provision_vm.py
 ```
 
 The provisioning process takes a few minutes to complete.
+
+    >Note: you can observe the progress of the VM deplyment by going to the **Azure Portal** and selecting the **Resource Group**
 
 ## 5. Verify the resources
 
