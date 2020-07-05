@@ -33,7 +33,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 ----
 
-# Exercise 1: Use the Azure libraries to provision a virtual machine
+### Exercise 1: Use the Azure libraries to provision a virtual machine
 
 This example demonstrates how to use the Azure SDK management libraries in a Python script to create a resource group that contains a Linux virtual machine. 
 
