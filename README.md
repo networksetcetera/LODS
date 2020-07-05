@@ -98,6 +98,8 @@ looks like we should build it from scratch like CA video demo
 This is more relevant to the "demo" which refers to **Service Bus Queues**
 https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues
 
+# June 30
+
 added VS Code and got it to work as an editor and for running Python code
 also got venv to work
 https://code.visualstudio.com/docs/python/python-on-azure
@@ -130,6 +132,7 @@ https://github.com/networksetcetera/AZ203T00
 You can list environment variables like this in Powershell (used for sample code)
 Get-ChildItem Env:
 
+# July 1
 
 Lab 02 - Functions
 
