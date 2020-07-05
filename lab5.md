@@ -93,35 +93,34 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 
 1.  Provision a resource group. 
 
-Add these lines to the Python file *provision_vm.py*
+    Add these lines to the Python file *provision_vm.py*
 
-```python
+    ```python
 
-# Obtain the management object for resources, using the credentials from the CLI login.
-resource_client = get_client_from_cli_profile(ResourceManagementClient)
+    # Obtain the management object for resources, using the credentials from the CLI login.
+    resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
-# Constants we need in multiple places: the resource group name and the region
-# in which we provision resources. You can change these values however you want.
-RESOURCE_GROUP_NAME = "PythonAzureExample-VM-rg"
-LOCATION = "centralus"
+    # Constants we need in multiple places: the resource group name and the region
+    # in which we provision resources. You can change these values however you want.
+    RESOURCE_GROUP_NAME = "PythonAzureExample-VM-rg"
+    LOCATION = "centralus"
 
-# Provision the resource group.
-rg_result = resource_client.resource_groups.create_or_update(RESOURCE_GROUP_NAME,
-    {
-        "location": LOCATION
-    }
-)
+    # Provision the resource group.
+    rg_result = resource_client.resource_groups.create_or_update(RESOURCE_GROUP_NAME,
+        {
+            "location": LOCATION
+        }
+    )
 
 
-print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} region")
-```
+    print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} region")
+    ```
 
->Note: This is the equivalent of the Azure CLI command
+    >Note: This is the equivalent of the Azure CLI command
 
-```
-az group create -n PythonAzureExample-VM-rg -l centralus
-```
-
+    ```
+    az group create -n PythonAzureExample-VM-rg -l centralus
+    ```
 1.  Provision a virtual network. 
 
 Add these lines to the Python file *provision_vm.py*
