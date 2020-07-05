@@ -148,8 +148,9 @@ poller = network_client.virtual_networks.create_or_update(RESOURCE_GROUP_NAME,
 vnet_result = poller.result()
 
 print(f"Provisioned virtual network {vnet_result.name} with address prefixes {vnet_result.address_space.address_prefixes}")
-
-# Step 3: Provision the subnet and wait for completion
+```
+1.  Provision the subnet and wait for completion
+```python
 poller = network_client.subnets.create_or_update(RESOURCE_GROUP_NAME, 
     VNET_NAME, SUBNET_NAME,
     { "address_prefix": "10.0.0.0/24" }
@@ -161,6 +162,8 @@ print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {sub
 ```
 
 1.  Provision an IP address and wait for completion
+
+    Add these lines to the Python file *provision_vm.py*
 
 ```python
 
@@ -179,6 +182,9 @@ ip_address_result = poller.result()
 print(f"Provisioned public IP address {ip_address_result.name} with address {ip_address_result.ip_address}")
 ```
 1.  Provision the network interface client
+
+    Add these lines to the Python file *provision_vm.py*
+    
 ```python
 poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
     NIC_NAME, 
@@ -197,6 +203,9 @@ nic_result = poller.result()
 print(f"Provisioned network interface client {nic_result.name}")
 ```
 1.  Provision the virtual machine
+
+    Add these lines to the Python file *provision_vm.py*
+    
 ```python
 # Obtain the management object for virtual machines
 compute_client = get_client_from_cli_profile(ComputeManagementClient)
