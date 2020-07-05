@@ -100,8 +100,6 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
     # Obtain the management object for resources, using the credentials from the CLI login.
     resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
-    # Constants we need in multiple places: the resource group name and the region
-    # in which we provision resources. You can change these values however you want.
     RESOURCE_GROUP_NAME = "PythonAzureExample-VM-rg"
     LOCATION = "centralus"
 
@@ -111,7 +109,6 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
             "location": LOCATION
         }
     )
-
 
     print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} region")
     ```
@@ -123,18 +120,9 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
     ```
 1.  Provision a virtual network. 
 
-Add these lines to the Python file *provision_vm.py*
+    Add these lines to the Python file *provision_vm.py*
 
 ```python
-# For details on the previous code, see Example: Provision a resource group
-# at https://docs.microsoft.com/azure/developer/python/azure-sdk-example-resource-group
-
-# Step 2: provision a virtual network
-
-# A virtual machine requires a network interface client (NIC). A NIC requires
-# a virtual network and subnet along with an IP address. Therefore we must provision
-# these downstream components first, then provision the NIC, after which we
-# can provision the VM.
 
 # Network and IP address names
 VNET_NAME = "python-example-vnet"
@@ -170,7 +158,12 @@ subnet_result = poller.result()
 
 print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {subnet_result.address_prefix}")
 
+```
+
 # Step 4: Provision an IP address and wait for completion
+
+```python
+
 poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME,
     IP_NAME,
     {
@@ -184,8 +177,9 @@ poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME
 ip_address_result = poller.result()
 
 print(f"Provisioned public IP address {ip_address_result.name} with address {ip_address_result.ip_address}")
-
+```
 # Step 5: Provision the network interface client
+```python
 poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
     NIC_NAME, 
     {
@@ -201,9 +195,9 @@ poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
 nic_result = poller.result()
 
 print(f"Provisioned network interface client {nic_result.name}")
-
+```
 # Step 6: Provision the virtual machine
-
+```python
 # Obtain the management object for virtual machines
 compute_client = get_client_from_cli_profile(ComputeManagementClient)
 
