@@ -94,7 +94,6 @@ The Python sample code is running a Linux container in the App Service using a b
     
     >**Note:** The web app code uses HTTP whereas the web app **browse** link under **overview** will go to HTTPS
     
-    ![running web app](https://github.com/networksetcetera/LODS/blob/master/images/demo1/run-hello-world-sample-python-app-in-browser.png)
    
 
 ### What happens to my app during deployment?
