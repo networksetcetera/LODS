@@ -215,3 +215,23 @@ https://code.visualstudio.com/docs/python/tutorial-flask
 The Azure CLI is written in Python
 https://www.python.org/success-stories/building-an-open-source-and-cross-platform-azure-cli-with-python/
 https://pypi.org/project/azure-cli/
+
+Azure SDK for Python
+https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install?view=azure-python
+
+Package index
+https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-library-package-index
+
+Examples and Tutorials
+https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-example-resource-group
+- Provision a resource group
+- Provision Azure storage
+- Use Azure storage
+- Provision & deploy a web app
+- Provision & query a database
+- Provision a virtual machine
+- Explore specific Azure services
+- Scenario-specific tutorials
+- How-to guides
+- Samples
+
