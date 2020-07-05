@@ -122,34 +122,37 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 
     Add these lines to the Python file *provision_vm.py*
 
-```python
+    ```python
 
-# Network and IP address names
-VNET_NAME = "python-example-vnet"
-SUBNET_NAME = "python-example-subnet"
-IP_NAME = "python-example-ip"
-IP_CONFIG_NAME = "python-example-ip-config"
-NIC_NAME = "python-example-nic"
+    # Network and IP address names
+    VNET_NAME = "python-example-vnet"
+    SUBNET_NAME = "python-example-subnet"
+    IP_NAME = "python-example-ip"
+    IP_CONFIG_NAME = "python-example-ip-config"
+    NIC_NAME = "python-example-nic"
 
-# Obtain the management object for networks
-network_client = get_client_from_cli_profile(NetworkManagementClient)
+    # Obtain the management object for networks
+    network_client = get_client_from_cli_profile(NetworkManagementClient)
 
-# Provision the virtual network and wait for completion
-poller = network_client.virtual_networks.create_or_update(RESOURCE_GROUP_NAME,
-    VNET_NAME,
-    {
-        "location": LOCATION,
-        "address_space": {
-            "address_prefixes": ["10.0.0.0/16"]
+    # Provision the virtual network and wait for completion
+    poller = network_client.virtual_networks.create_or_update(RESOURCE_GROUP_NAME,
+        VNET_NAME,
+       {
+            "location": LOCATION,
+            "address_space": {
+                "address_prefixes": ["10.0.0.0/16"]
+            }
         }
-    }
-)
+    )
 
-vnet_result = poller.result()
+    vnet_result = poller.result()
 
-print(f"Provisioned virtual network {vnet_result.name} with address prefixes {vnet_result.address_space.address_prefixes}")
-```
+    print(f"Provisioned virtual network {vnet_result.name} with address prefixes {vnet_result.address_space.address_prefixes}")
+    ```
 1.  Provision the subnet and wait for completion
+
+    Add these lines to the Python file *provision_vm.py*
+    
 ```python
 poller = network_client.subnets.create_or_update(RESOURCE_GROUP_NAME, 
     VNET_NAME, SUBNET_NAME,
