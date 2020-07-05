@@ -91,7 +91,9 @@ In this exercise, you created a new Storage Account that you'll use through the 
 
 1.  Using **Visual Studio Code**, open the **Allfiles (F):\\Allfiles\\Labs\\11\\Starter\\MessageProcessor** folder.
 
-1.  Using **Visual Studio Code**, create a new text file named **requirements.txt** in the current folder:
+1.  Using **Visual Studio Code**, create a new text file named **requirements.txt** in the current folder. 
+    Add the following lines to the text file
+    
     ```text
     azure-mgmt-resource
     azure-mgmt-network
