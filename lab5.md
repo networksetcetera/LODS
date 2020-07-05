@@ -89,7 +89,7 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
     from azure.mgmt.network import NetworkManagementClient
     from azure.mgmt.compute import ComputeManagementClient
     ```
->Note: This imports the libraries from the Azure SDK for Python
+    >Note: This imports the libraries from the Azure SDK for Python
 
 1.  Provision a resource group. 
 
