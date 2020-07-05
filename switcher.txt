@@ -1,0 +1,40 @@
+# AZ-204 Lab 1 Demo
+
+:::intro
+
+<label for="stuff">Select the demo type below. You can change this at any time.</label>
+
+:::
+
+<select id="stuff">
+  <option value="portal">Azure Portal</option>
+  <option value="cli">CLI</option>
+  <option value="git">Git</option>  
+</select>
+
+
+:::portal
+
+<font size=4 color=red><strong>This is the Azure portal content!</strong></font>
+
+:::
+
+
+<span class="portal">!INSTRUCTIONS[](https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/01-Demo_Create_a_WebApp_by_using_the_Azure_Portal.md)</span>
+
+:::cli
+
+<font size=4 color=red><strong>These are the instructions for Azure CLI</strong></font>
+
+:::
+
+<span class="cli">!INSTRUCTIONS[](https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/02-Demo_Create_HTML_webapp_CLI.md)</span>
+
+:::git
+
+<font size=4 color=red><strong>These are the instructions for Git</strong></font>
+
+:::
+
+<span class="git">!INSTRUCTIONS[](https://raw.githubusercontent.com/JeffKoMS/AZ203T00/master/demos/M01/L02/03-Demo_Create_web_app_local_git.md)</span>
+
