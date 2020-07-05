@@ -273,3 +273,5 @@ https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverl
 
 See Martin's suggestions
 https://github.com/networksetcetera/LODS/issues/1#issuecomment-653840527
+
+Look at 2 demos for Module 5
