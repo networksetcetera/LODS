@@ -87,15 +87,20 @@ In this exercise, you created a new Storage Account that you'll use through the 
 
 #### Task 1: Create a Python project
 
-1.  Using Visual Studio Code, open the **Allfiles (F):\\Allfiles\\Labs\\11\\Starter\\MessageProcessor** folder.
+1.  Install the Python extention in **Visual Studio Code**.
 
-1.  Using a terminal, create a new .NET project named **MessageProcessor** in the current folder:
+1.  Using **Visual Studio Code**, open the **Allfiles (F):\\Allfiles\\Labs\\11\\Starter\\MessageProcessor** folder.
 
+1.  Using **Visual Studio Code**, create a new text file named **requirements.txt** in the current folder:
+    ```text
+    azure-mgmt-resource
+    azure-mgmt-network
+    azure-mgmt-compute
+    azure-mgmt-storage
+    azure-cli-core
     ```
-    dotnet new console --name MessageProcessor --output .
-    ```
 
-    > **Note**: The **dotnet new** command will create a new **console** project in a folder with the same name as the project.
+1.  Using **Visual Studio Code**, create a new Python file named **MessageProcessor.py** in the current folder:
 
 1.  Using the same terminal, import version 12.0.0 of **Azure.Storage.Queues** from NuGet:
 
