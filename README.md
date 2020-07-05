@@ -98,7 +98,7 @@ looks like we should build it from scratch like CA video demo
 This is more relevant to the "demo" which refers to **Service Bus Queues**
 https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues
 
-# June 30
+## June 30
 
 added VS Code and got it to work as an editor and for running Python code
 also got venv to work
@@ -132,7 +132,7 @@ https://github.com/networksetcetera/AZ203T00
 You can list environment variables like this in Powershell (used for sample code)
 Get-ChildItem Env:
 
-# July 1
+## July 1
 
 Lab 02 - Functions
 
@@ -228,14 +228,12 @@ https://code.visualstudio.com/docs/python/tutorial-flask
 
 
 
-# July 4
+## July 4
 
 The Azure CLI is written in Python
 https://www.python.org/success-stories/building-an-open-source-and-cross-platform-azure-cli-with-python/
 https://pypi.org/project/azure-cli/
 
-
-# July 5
 
 Azure SDK for Python
 https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install?view=azure-python
@@ -261,6 +259,8 @@ https://docs.microsoft.com/en-us/azure/developer/python/configure-local-developm
 - VS code, with recommended extensions
 - CMD prompt
 - venv
+
+## July 5
 
 Lab01 - alternate (from PyCon 2020)
 https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-app-service-on-linux-01
