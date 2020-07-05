@@ -31,7 +31,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 -   File Explorer
 
-
+===
 
 # Exercise 1: Use the Azure libraries to provision a virtual machine
 
@@ -246,7 +246,7 @@ The provisioning process takes a few minutes to complete.
 Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureExample-VM-rg" resource group, and note the virtual machine, virtual disk, network security group, public IP address, network interface, and virtual network:
 
 
-
+===
 
 
 ### Exercise 2: Create a Docker container image and deploy it to Azure Container Registry
@@ -471,6 +471,8 @@ Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureE
 #### Review
 
 In this exercise, you created a .NET console application to display a machine’s current IP address. You then added the **Dockerfile** file to the application so that it could be converted into a Docker container image. Finally, you deployed the container image to Container Registry.
+
+===
 
 ### Exercise 3: Deploy an Azure container instance using Python
 
