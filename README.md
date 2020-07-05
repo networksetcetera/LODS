@@ -216,6 +216,9 @@ The Azure CLI is written in Python
 https://www.python.org/success-stories/building-an-open-source-and-cross-platform-azure-cli-with-python/
 https://pypi.org/project/azure-cli/
 
+
+# July 5
+
 Azure SDK for Python
 https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install?view=azure-python
 
@@ -234,4 +237,10 @@ https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-example-resour
 - Scenario-specific tutorials
 - How-to guides
 - Samples
+
+Recommended Environment
+https://docs.microsoft.com/en-us/azure/developer/python/configure-local-development-environment?tabs=cmd
+- VS code, with recommended extensions
+- CMD prompt
+- venv
 
