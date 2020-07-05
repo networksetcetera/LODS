@@ -498,7 +498,7 @@ In this exercise, you created a .NET console application to display a machine’
 
 ----
 
-### Exercise 3: Deploy an Azure container instance using Python
+### Exercise 3: Deploy an Azure container instance
 
 #### Task 1: Enable the admin user in Container Registry
 
