@@ -257,13 +257,13 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 ## 4. Run the script
 
 Type this at the command prompt and press **enter** to run the Python script
+
 ```cmd
 python provision_vm.py
 ```
 
 The provisioning process takes a few minutes to complete.
 
-    >Note: you can observe the progress of the VM deplyment by going to the **Azure Portal** and selecting the **Resource Group**
 
 ## 5. Verify the resources
 
