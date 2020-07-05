@@ -33,7 +33,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 ----
 
-### Exercise 1: Use the Azure libraries to provision a virtual machine
+### Exercise 1: Use the Azure Python libraries to provision a virtual machine
 
 This example demonstrates how to use the Azure SDK management libraries in a Python script to create a resource group that contains a Linux virtual machine. 
 
@@ -79,19 +79,23 @@ This example demonstrates how to use the Azure SDK management libraries in a Pyt
 
 ## 3: Write code to provision a virtual machine
 
-Create a Python file named *provision_vm.py* with the following code. The comments explain the details:
+1.  Create a Python file named *provision_vm.py* with the following code. 
+
+    ```python
+    # Import the needed management objects from the libraries. The azure.common library
+    # is installed automatically with the other libraries.
+    from azure.common.client_factory import get_client_from_cli_profile
+    from azure.mgmt.resource import ResourceManagementClient
+    from azure.mgmt.network import NetworkManagementClient
+    from azure.mgmt.compute import ComputeManagementClient
+    ```
+>Note: This imports the libraries from the Azure SDK for Python
+
+1.  Provision a resource group. 
+
+Add these lines to the Python file *provision_vm.py*
 
 ```python
-# Import the needed management objects from the libraries. The azure.common library
-# is installed automatically with the other libraries.
-from azure.common.client_factory import get_client_from_cli_profile
-from azure.mgmt.resource import ResourceManagementClient
-from azure.mgmt.network import NetworkManagementClient
-from azure.mgmt.compute import ComputeManagementClient
-
-print(f"Provisioning a virtual machine...some operations might take a minute or two.")
-
-# Step 1: Provision a resource group
 
 # Obtain the management object for resources, using the credentials from the CLI login.
 resource_client = get_client_from_cli_profile(ResourceManagementClient)
@@ -110,7 +114,19 @@ rg_result = resource_client.resource_groups.create_or_update(RESOURCE_GROUP_NAME
 
 
 print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} region")
+```
 
+>Note: This is the equivalent of the Azure CLI command
+
+```
+az group create -n PythonAzureExample-VM-rg -l centralus
+```
+
+1.  Provision a virtual network. 
+
+Add these lines to the Python file *provision_vm.py*
+
+```python
 # For details on the previous code, see Example: Provision a resource group
 # at https://docs.microsoft.com/azure/developer/python/azure-sdk-example-resource-group
 
