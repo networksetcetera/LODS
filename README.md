@@ -288,4 +288,7 @@ https://code.visualstudio.com/docs/containers/quickstart-python
 
 Intially, you would just create a Python web app using _Flask_ then you can put the entire web app in a _Docker container_
 
+Compare ACR, ECR and Docker Hub
+https://www.g2.com/compare/azure-container-registry-vs-docker-hub-vs-amazon-elastic-container-registry-ecr
+
 
