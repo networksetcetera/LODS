@@ -277,7 +277,7 @@ https://github.com/networksetcetera/LODS/issues/1#issuecomment-653840527
 Look at demos for Module 5.  There are 8 demos (not 2)
 - create an Azure VM (2, Portal, Powershell) .. suggest Python option
 - create an ARM template (2, Portal, VS Code) 
-containers .. suggest a Python option
+- containers 
 - Demo: Retrieve and deploy existing Docker image locally
 - Demo: Create a container image by using Docker
 - Demo: Deploy an image to ACR by using Azure CLI .. suggest a Python option
