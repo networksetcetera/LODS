@@ -87,9 +87,16 @@ In this exercise, you created a new Storage Account that you'll use through the 
 
 #### Task 1: Create a Python project
 
+>Note: You can use this link for guidance (https://code.visualstudio.com/docs/python/python-tutorial)
+
 1.  Install the Python extention in **Visual Studio Code**.
 
 1.  Using **Visual Studio Code**, open the **Allfiles (F):\\Allfiles\\Labs\\11\\Starter\\MessageProcessor** folder.
+
+1.  Open a Terminal in **Visual Studio Code**. Create a Virtual Environment for Python by running this command:
+    ```
+    python -m venv .venv
+    ```
 
 1.  Using **Visual Studio Code**, create a new text file named **requirements.txt** in the current folder. 
     Add the following lines to the text file
@@ -101,10 +108,18 @@ In this exercise, you created a new Storage Account that you'll use through the 
     azure-mgmt-storage
     azure-cli-core
     ```
+1.  Install the required Azure libraries for Python by running this command:
+    ```
+    pip install -r requirements.txt
+    ```
 1.  Sign into your Azure account using a terminal in **Visual Studio Code**.
 
-1.  Choose your Python interpreter in **Visual Studio Code** by selecting the **command palette**. You can use this link for guidance (https://code.visualstudio.com/docs/python/python-tutorial)
-
+1.  Choose your Python interpreter in **Visual Studio Code** by selecting the **command palette** under the _view_ menu. Type 
+    ```
+    Python: Select Interpreter
+    ```
+    >Note: In the dropdown menu select the virtual environment **.venv** that you created earlier
+    
 1.  Using **Visual Studio Code**, create a new Python file named **MessageProcessor.py** in the current folder.
 
     
