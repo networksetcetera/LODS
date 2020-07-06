@@ -134,7 +134,7 @@ In this exercise, you created a new Storage Account that you'll use through the 
 
 1.  Expand **Storage Accounts** 
 
-1.  Expand the Asynchstor<yourname> Storage Account
+1.  Expand the **asyncstor[yourname]** Storage account Storage Account
  
 1.  Expand Queues
 
