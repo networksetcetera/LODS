@@ -283,4 +283,9 @@ containers .. suggest a Python option
 - Demo: Deploy an image to ACR by using Azure CLI .. suggest a Python option
 - Demo: Run Azure Container Instances by using the Cloud Shell
 
+Consider _Python in a container_
+https://code.visualstudio.com/docs/containers/quickstart-python
+
+Intially, you would just create a Python web app using _Flask_ then you can put the entire web app in a _Docker container_
+
 
