@@ -120,7 +120,7 @@ In this exercise, you created a new Storage Account that you'll use through the 
     ```
     >Note: In the dropdown menu select the virtual environment **.venv** that you created earlier
     
-1.  Using **Visual Studio Code**, create a new Python file named **MessageProcessor.py** in the current folder.
+1.  Using **Visual Studio Code**, create a new Python file named **QueueCreate.py** in the current folder.
 
     
 #### Task 2: Write code to access Azure Storage
@@ -138,6 +138,8 @@ In this exercise, you created a new Storage Account that you'll use through the 
     ```
 
 1.  Update the **<connection_string>** string constant by setting its value to the **Connection string** of the storage account that you recorded earlier in this lab.
+
+1.  Run the Python script by clicking the green **run** button with the caption _Run python File in Terminal_
 
 #### Task 3: Validate Azure Storage access
 
