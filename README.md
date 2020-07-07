@@ -304,9 +304,12 @@ todo: Functions Lab and Functions Demo
 
 todo: follow up on invoice
 
-- Demo 5
-mcr.microsoft.com cannont be browsed.  Instead use Docker Hub to list images published by MS
-Consider Python in the container (See note in issues)
+Demo 5
+
+- mcr.microsoft.com cannont be browsed.  Instead use Docker Hub to list images published by MS
+
+- Consider Python in the container (See note in issues)
 https://hub.docker.com/_/python
-Consider Flask in a container
+
+- Consider Flask in a container
 https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-containers-01
