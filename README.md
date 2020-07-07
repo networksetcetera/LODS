@@ -313,3 +313,6 @@ https://hub.docker.com/_/python
 
 - Consider Flask in a container
 https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-containers-01
+
+- easy test, Using **Module 01b (Python)**
+https://hub.docker.com/_/hello-world
