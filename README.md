@@ -291,4 +291,20 @@ Intially, you would just create a Python web app using _Flask_ then you can put 
 Compare ACR, ECR and Docker Hub
 https://www.g2.com/compare/azure-container-registry-vs-docker-hub-vs-amazon-elastic-container-registry-ecr
 
+## July 6
 
+Released 
+- Lab 1
+- Demo 1, with Python option
+- Lab 5, Exercise 1 only
+
+## July 7
+todo: Functions Lab and Functions Demo
+todo: follow up on invoice
+
+- Demo 5
+mcr.microsoft.com cannont be browsed.  Instead use Docker Hub to list images published by MS
+Consider Python in the container (See note in issues)
+https://hub.docker.com/_/python
+Consider Flask in a container
+https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-containers-01
