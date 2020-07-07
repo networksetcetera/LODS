@@ -306,7 +306,7 @@ todo: follow up on invoice
 
 Demo 5
 
-- mcr.microsoft.com cannont be browsed.  Instead use Docker Hub to list images published by MS
+- mcr.microsoft.com cannot be browsed.  Instead use Docker Hub to list images published by MS
 
 - Consider Python in the container (See note in issues)
 https://hub.docker.com/_/python
