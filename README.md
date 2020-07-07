@@ -299,7 +299,9 @@ Released
 - Lab 5, Exercise 1 only
 
 ## July 7
+
 todo: Functions Lab and Functions Demo
+
 todo: follow up on invoice
 
 - Demo 5
