@@ -316,3 +316,25 @@ https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-containe
 
 - easy test, Using **Module 01b (Python)**
 https://hub.docker.com/_/hello-world
+
+## July 8 to 9
+
+Scope change
+
+## July 10 
+
+New list of Labs and Demos
+- Lab 1
+- Lab 2
+- Lab 5
+- Lab 11
+- Demo 4
+- Demo 6 (counts as 2)
+- Demo 11
+
+References for Demo 4
+![python identity and security](https://docs.microsoft.com/en-us/azure/developer/python/quickstarts-identity-security)
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-daemon
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-webapp
