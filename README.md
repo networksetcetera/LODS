@@ -332,10 +332,14 @@ New list of Labs and Demos
 - Demo 6 (counts as 2)
 - Demo 11
 
-References for Demo 4
+References for Demo 6 (identity and authentication)
 
 https://docs.microsoft.com/en-us/azure/developer/python/quickstarts-identity-security
 
 https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-daemon
 
 https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-webapp
+
+References for Demo 4 (Cosmos DB)
+
+https://docs.microsoft.com/en-us/azure/developer/python/quickstarts-data-solutions
