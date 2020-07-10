@@ -333,6 +333,7 @@ New list of Labs and Demos
 - Demo 11
 
 References for Demo 4
+
 https://docs.microsoft.com/en-us/azure/developer/python/quickstarts-identity-security
 
 https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-daemon
