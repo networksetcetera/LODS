@@ -102,11 +102,9 @@ In this exercise, you created a new Storage Account that you'll use through the 
     Add the following lines to the text file
     
     ```text
-    azure-mgmt-resource
-    azure-mgmt-network
-    azure-mgmt-compute
-    azure-mgmt-storage
-    azure-cli-core
+    
+    azure-storage-queue
+
     ```
 1.  Install the required Azure libraries for Python by running this command:
     ```
@@ -165,47 +163,33 @@ In this exercise, you configured your Python project to access the Storage servi
 
 #### Task 1: Write code to access queue messages
 
-1.  In the **Main** method, perform the following actions:
+1.  Using **Visual Studio Coed** create a new Python file called** MessageReader.py** in the current folder
 
-    1.  Render a header by using the **Console.WriteLine** static method:
+    1.  Add the following block of code to create the Queue Client:
 
         ```
-        Console.WriteLine($"---Existing Messages---");
+        from azure.storage.queue import QueueClient
+
+        queue = QueueClient.from_connection_string(conn_str="<connection_string>", queue_name="messagequeue")
+        ```
+
+    1.  Render a header by using the **print** command:
+
+        ```
+        print("---Existing Messages---");
         ```
     
-    1.  Add the following block of code to create variables that will be used when retrieving queue messages:
-
-        ```
-        int batchSize = 10;
-        TimeSpan visibilityTimeout = TimeSpan.FromSeconds(2.5d);
-        ```
-
     1.  Add the following block of code to retrieve a batch of messages asynchronously from the queue service and iterate over the messages:
-
         ```
-        Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
-        foreach(QueueMessage message in messages?.Value)
-        {
-        }
+        messages = queue.receive_messages()
+        for msg in messages:
+            print(msg.content)
         ```
 
-    1.  Within the **foreach** block, render the **MessageId** and **MessageText** properties of the **[QueueMessage](https://docs.microsoft.com/dotnet/api/azure.storage.queues.models.queuemessage)** instance:
+1.  Save the **MessageReader.py** file.
 
-        ```
-        Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
-        ```
+1.  Run the Python script by clicking the green **run** button with the caption _Run python File in Terminal_
 
-1.  Save the **Program.cs** file.
-
-1.  Using a terminal, build the ASP.NET web application project:
-
-    ```
-    dotnet build
-    ```
-
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor** folder.
-
-1.  Close the current terminal.
 
 #### Task 2: Test message queue access
 
