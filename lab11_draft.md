@@ -161,9 +161,32 @@ In this exercise, you configured your Python project to access the Storage servi
 
 ### Exercise 3: Add messages to the queue 
 
-#### Task 1: Write code to access queue messages
+#### Task 1: Use **Storage Explorer** to add test messages
 
-1.  Using **Visual Studio Coed** create a new Python file called** MessageReader.py** in the current folder
+1.  Using the **Azure Portal** find the **asyncstor[yourname]** Storage account that you created earlier in this lab.
+
+1.  In the **Overview** section of the blade, select **Open in Explorer** to open the Storage account by using Storage Explorer.
+
+    >**Note:** You can also open **Storage Explorer** using the icon in the windows taskbar
+
+1.  In the **Azure Storage Explorer** application, sign in to your Azure account.
+
+1.  From the **Azure Storage Explorer** application, in the **EXPLORER** pane, find and expand the **asyncstor*[yourname]*** storage account that you created earlier in this lab.
+
+1.  Within the **asyncstor*[yourname]*** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
+
+1.  Add a new message to the queue with the following properties:
+
+    -   Message text: **Hello World**
+
+    -   Expires in: **12 Hours**
+
+    -   Encode message body in Base 64: **No**
+
+
+#### Task 2: Write code to access queue messages
+
+1.  Using **Visual Studio Code** create a new Python file called** MessageReader.py** in the current folder
 
     1.  Add the following block of code to create the Queue Client:
 
@@ -190,52 +213,7 @@ In this exercise, you configured your Python project to access the Storage servi
 
 1.  Run the Python script by clicking the green **run** button with the caption _Run python File in Terminal_
 
-
-#### Task 2: Test message queue access
-
-1.  Using a terminal, run the ASP.NET web application project:
-
-    ```
-    dotnet run
-    ```
-
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor** folder.
-
-1.  Observe the output from the currently running console application. The output indicates that no messages are in the queue.
-
-1.  Close the current terminal.
-
-1.  Find the **asyncstor*[yourname]*** Storage account that you created earlier in this lab.
-
-1.  In the **Overview** section of the blade, select **Open in Explorer** to open the Storage account by using Storage Explorer.
-
-1.  In the **Azure Storage Explorer** application, sign in to your Azure account.
-
-1.  From the **Azure Storage Explorer** application, in the **EXPLORER** pane, find and expand the **asyncstor*[yourname]*** storage account that you created earlier in this lab.
-
-1.  Within the **asyncstor*[yourname]*** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
-
-1.  Add a new message to the queue with the following properties:
-
-    -   Message text: **Hello World**
-
-    -   Expires in: **12 Hours**
-
-    -   Encode message body in Base 64: **No**
-
-1.  Return to the Visual Studio Code application.
-
-1.  Using a terminal, run the ASP.NET web application project:
-
-    ```
-    dotnet run
-    ```
-
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor** folder.
-
-1.  Observe the output from the currently running console application. The output includes the new message that you created.
-
-1.  Close the current terminal.
+    >**Note:** The output of the Python script should echo the message text that you added the the queue earlier.
 
 #### Task 3: Delete queued messages
 
@@ -273,7 +251,7 @@ In this exercise, you configured your Python project to access the Storage servi
 
 #### Review
 
-In this exercise, you read and deleted existing messages from the Storage queue by using the .NET library.
+In this exercise, you read and deleted existing messages from the Storage queue by using the Azure library for Storage Queues in Python.
 
 ### Exercise 4: Queue new messages by using .NET
 
