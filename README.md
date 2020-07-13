@@ -343,3 +343,7 @@ https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-py
 References for Demo 4 (Cosmos DB)
 
 https://docs.microsoft.com/en-us/azure/developer/python/quickstarts-data-solutions
+
+## July 13
+
+Got confirmation of the new ask
