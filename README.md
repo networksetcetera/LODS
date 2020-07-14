@@ -349,3 +349,7 @@ https://docs.microsoft.com/en-us/azure/developer/python/quickstarts-data-solutio
 Got confirmation of the new ask
 
 Sent Lab11 for review 
+
+## July 14
+
+Demo11 - working (Service Bus, See files in Onedrive)
