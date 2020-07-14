@@ -115,6 +115,8 @@ In this exercise, you created a new Storage Account that you'll use through the 
     ```
     pip install -r requirements.txt
     ```
+    >**Note:** You may need to update the version of PIP
+    
 1.  Sign into your Azure account using a terminal in **Visual Studio Code**.
 
 1.  Choose your Python interpreter in **Visual Studio Code** by selecting the **command palette** under the _view_ menu. Type 
