@@ -171,7 +171,7 @@ In this exercise, you configured your Python project to access the Storage servi
 
 1.  In the **Azure Storage Explorer** application, sign in to your Azure account.
 
-1.  From the **Azure Storage Explorer** application, in the **EXPLORER** pane, find and expand the **asyncstor*[yourname]*** storage account that you created earlier in this lab.
+1.  From the **Azure Storage Explorer** application, in the **EXPLORER** pane, find and expand the **asyncstor[yourname]** storage account that you created earlier in this lab.
 
 1.  Within the **asyncstor*[yourname]*** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
 
