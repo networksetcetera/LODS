@@ -257,7 +257,7 @@ In this exercise, you read and deleted existing messages from the Storage queue 
 
 ### Exercise 4: Queue new messages by using .NET
 
-1.  Using **Visual Studio Code** create a new Python file called** MessageAdd.py** in the current folder
+1.  Using **Visual Studio Code** create a new Python file called **MessageAdd.py** in the current folder
 
     1.  Add the following block of code to create the Queue Client:
 
@@ -286,7 +286,7 @@ In this exercise, you read and deleted existing messages from the Storage queue 
 
 #### Task 2: View queued messages by using Storage Explorer
 
-1.  In the **Azure Storage Explorer** window, within the **asyncstor*[yourname]*** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
+1.  In the **Azure Storage Explorer** window, within the **asyncstor[yourname]** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
 
 1.  Observe the single new message in the list of messages in the queue.
 
