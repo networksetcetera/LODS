@@ -217,33 +217,34 @@ In this exercise, you configured your Python project to access the Storage servi
 
 #### Task 3: Delete queued messages
 
-1.  In the **Visual Studio Code** window, open the **Program.cs** file.
 
-1.  Update the **foreach** loop's block of code to invoke the **DeleteMessageAsync** method of the **QueueMessage** class, passing in the **MessageId** and **PopReceipt** properties of the *message* variable:
+1.  Using **Visual Studio Code** create a new Python file called** MessageDelete.py** in the current folder
 
-    ```
-    foreach(QueueMessage message in messages?.Value)
-    {
-        Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
-        await client.DeleteMessageAsync(message.MessageId, message.PopReceipt);
-    }
-    ```
+    1.  Add the following block of code to create the Queue Client:
 
-1.  **Save** the **Program.cs** file.
+        ```
+        from azure.storage.queue import QueueClient
 
-1.  Using a terminal, run the ASP.NET web application project:
+        queue = QueueClient.from_connection_string(conn_str="<connection_string>", queue_name="messagequeue")
+        ```
 
-    ```
-    dotnet run
-    ```
+    1.  Render a header by using the **print** command:
 
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor** folder.
+        ```
+        print("---Deleting Messages---");
+        ```
+    
+    1.  Add the following block of code to retrieve a batch of messages asynchronously from the queue service and iterate over the messages:
+        ```
+        queue.clear_messages()
 
-1.  Observe the output from the currently running console application. The message that you created earlier in the lab still exists because it hasn't been deleted previously.
+        ```
 
-1.  Close the current terminal.
+1.  Save the **MessageDelete.py** file.
 
-1.  In the **Azure Storage Explorer** window, within the **asyncstor*[yourname]*** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
+1.  Run the Python script by clicking the green **run** button with the caption _Run python File in Terminal_
+
+1.  In the **Azure Storage Explorer** window, within the **asyncstor[yourname]** node for the Storage account that you created earlier in this lab, find and open the **messagequeue** queue.
 
 1.  Observe the empty list of messages in the queue.
 
@@ -253,46 +254,35 @@ In this exercise, you configured your Python project to access the Storage servi
 
 In this exercise, you read and deleted existing messages from the Storage queue by using the Azure library for Storage Queues in Python.
 
+
 ### Exercise 4: Queue new messages by using .NET
 
-#### Task 1: Write code to create queue messages
+1.  Using **Visual Studio Code** create a new Python file called** MessageAdd.py** in the current folder
 
-1.  In the **Visual Studio Code** window, open the **Program.cs** file.
-
-1.  In the **Main** method, perform the following actions:
-
-    1.  Render a header by using the **Console.WriteLine** static method:
+    1.  Add the following block of code to create the Queue Client:
 
         ```
-        Console.WriteLine($"---New Messages---");
+        from azure.storage.queue import QueueClient
+
+        queue = QueueClient.from_connection_string(conn_str="<connection_string>", queue_name="messagequeue")
+        ```
+
+    1.  Render a header by using the **print** command:
+
+        ```
+        print("---Adding Messages---");
         ```
     
-    1.  Add the following block of code to create a new string variable named *greeting* with a value of **Hi, Developer!**, and then invoke the **SendMessageAsync** method of the **QueueClient** class by using the *greeting* variable as a parameter:
-
+    1.  Add the following block of code to retrieve a batch of messages asynchronously from the queue service and iterate over the messages:
         ```
-        string greeting = "Hi, Developer!";
-        await client.SendMessageAsync(greeting);
-        ```
-
-    1.  Add the following block of code to render the content of the message that you sent:
-
-        ```
-        Console.WriteLine($"Sent Message:\t{greeting}");
+        queue.send_message("Hi Developer!")
+        
         ```
 
-1.  **Save** the **Program.cs** file.
+1.  Save the **MessageAdd.py** file.
 
-1.  Using a terminal, run the ASP.NET web application project:
+1.  Run the Python script by clicking the green **run** button with the caption _Run python File in Terminal_
 
-    ```
-    dotnet run
-    ```
-
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor** folder.
-
-1.  Observe the output from the currently running console application. The content of the new message that you sent should be in the output.
-
-1.  Close the current terminal.
 
 #### Task 2: View queued messages by using Storage Explorer
 
