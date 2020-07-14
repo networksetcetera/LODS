@@ -97,6 +97,11 @@ In this exercise, you created a new Storage Account that you'll use through the 
     ```
     python -m venv .venv
     ```
+1.  Activate the virtual environment for Python by runnng this command:
+
+    ```
+    .venv\scripts\activate
+    ```
 
 1.  Using **Visual Studio Code**, create a new text file named **requirements.txt** in the current folder. 
     Add the following lines to the text file
