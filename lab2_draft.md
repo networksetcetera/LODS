@@ -142,7 +142,7 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 ### Exercise 2: Create a function that's triggered by an HTTP request using Visual Studio Code
 
-> **Note**: The interface for Azure Functions has been updated. (Classic version and current branch). Also, as of this writing, authoring and editing Python Functions are supported only in Visual Studio Code. You can then upload your Functions to Azure and view them from the Azure Portal.
+> **Note**: The interface for Azure Functions has been updated. (Classic version and current branch). Also, as of this writing, authoring and editing Python Functions are supported only in Visual Studio Code. You can then upload your Functions to Azure and view them from the Azure Portal. Use this link as a guide (https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python)
 
 ![Functions extension](https://github.com/networksetcetera/LODS/blob/master/images/lab2/Screen%20Shot%202020-06-30%20at%2010.37.02%20AM.png)
 
