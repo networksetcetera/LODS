@@ -286,27 +286,29 @@ In this exercise, you created a basic function that echoes the content sent via 
 
 #### Task 1: Create a schedule-triggered function
 
-1.  In the Azure portal's navigation pane, select the **Resource groups** link.
+1.  Return to **Visual Studio Code**.
 
-1.  On the **Resource groups** blade, find and then select the **Serverless** resource group that you created earlier in this lab.
+1.  Select the Azure Icon in the left navigation 
 
-1.  On the **Serverless** blade, select the **funclogic*[yourname]*** function app that you created earlier in this lab.
-
-1.  From the **App Service** blade, select the **Functions** option from the **Functions** section.
-
-1. In the **Functions** pane, select the **+ Add** button.
-
-1.  In the **New Function** popup dialog, perform the following actions:
+1.  Expand **Functions**
     
-    1.  Within the **Templates** tab, select **Timer trigger**.
+1.  Expand **Local Project**.
 
-    1.  Within the **Details** tab, find the **New Function** text box and then enter **Recurring**.
+1.  Click on **Functions**
 
-    1.  Within the **Details** tab, find the **Schedule** text box and then enter **0 \*/2 \* \* \* \***.
+1.  Click the **Create Functions..** icon
 
-    1.  Within the **Details** tab, find the **Authorization** text box and then select **Anonymous**.
+1.  Rename the function from _TimerTrigger1_ to **Recurring** and press **enter**.
 
-    1.  Select **Create Function**.
+1.  Leave the default value of the _cron_ expression and press **enter**
+
+1.  In the **Schedule** text box, change the value to **\*/30 \* \* \* \* \***.
+
+1.  You should now see some sample Python code for a scheduled Function
+
+1.  Select the new function in the left-hand navigation of **Visual Studio Code**
+
+
 
 #### Task 2: Observe function runs
 
