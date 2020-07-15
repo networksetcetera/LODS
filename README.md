@@ -376,6 +376,8 @@ Lab02 - procedure for Azure Functions in Python using VS Code (https://docs.micr
 - download node.js (64-bit), select **chocolatey** option
 - This requires a restart of the Lab VM
 - Check installation.  Az, Python, npm, choco
+- Debug locally. This will ask to install _Azure Functiosn Core Tools_
+
 
 
 
