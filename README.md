@@ -380,4 +380,6 @@ Lab02 - procedure for Azure Functions in Python using VS Code (https://docs.micr
 
 Lab02 - complete, files in Onedrive
 
+Demo06 - Graph API (https://docs.microsoft.com/en-US/graph/api/user-get?view=graph-rest-1.0&tabs=http)
+
 
