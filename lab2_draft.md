@@ -336,7 +336,7 @@ In this exercise, you created a basic function that echoes the content sent via 
 
 1.  Observe the function run that occurs about every 30 seconds. Each function run should render a simple message to the log.
 
-    >Note:** You can also observe the Successful runs of the Function by selecting **Monitor** in the left-hand navigation 
+    >**Note:** You can also observe the Successful runs of the Function by selecting **Monitor** in the left-hand navigation 
 
 #### Review
 
