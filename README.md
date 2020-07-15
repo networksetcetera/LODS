@@ -355,3 +355,5 @@ Sent Lab11 for review
 Demo11 - working (Service Bus, See files in Onedrive)
 
 Demo04 - found a better example (https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python)
+
+Demo06b - daemon example MSAL (https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-daemon#more-information) 
