@@ -135,6 +135,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  Select **Create** to create the function app by using your specified configuration. 
 
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
+    
+    > **Hint:** The Azure Function will use the Storage Account for _AzureWebJobStorage_.  You can see this setting under **Application Settings** for your empty Azure Function
 
 #### Review
 
@@ -212,7 +214,7 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 1.  Select the Azure Function you created earlier
 
-    >**Note:** You will get a message _Deploying to AzureFunction[yourname]_
+    >**Note:** You will get a message _Deploying to FuncLogic[yourname]_
 
 1.  Wait until you get a confirmation message that the deployment is complete. Click **View Output**
 
@@ -298,6 +300,8 @@ In this exercise, you created a basic function that echoes the content sent via 
 
 1.  Click the **Create Functions..** icon
 
+1.  Select **Timer trigger**
+
 1.  Rename the function from _TimerTrigger1_ to **Recurring** and press **enter**.
 
 1.  Leave the default value of the _cron_ expression and press **enter**
@@ -308,65 +312,79 @@ In this exercise, you created a basic function that echoes the content sent via 
 
 1.  Select the new function in the left-hand navigation of **Visual Studio Code**
 
+1.  Click **Deploy to Function app..**
+
+1.  Select the Azure Function you created earlier
+
+    >**Note:** You will get a message _Deploying to AzureFunction[yourname]_
+
+1.  Wait until you get a confirmation message that the deployment is complete.
+
 
 
 #### Task 2: Observe function runs
 
-1.  In the **Function** blade, select the **Code + Test** option from the **Developer** section.
+1.  Return to the **Azure Portal** and return to the Function _Funclogic[yourname]_
+
+1.  Select **Functions** in the left-hand navigation.
+
+1.  Click on **Recurring** then click **Code and Test**
+
+    >**Note:** editing is not available in the Azure Portal. However, you can run the Function and observe the logs
 
 1.  In the function editor, select **Logs**.
 
-1.  Observe the function run that occurs about every two minutes. Each function run should render a simple message to the log.
+1.  Observe the function run that occurs about every 30 seconds. Each function run should render a simple message to the log.
 
-#### Task 3: Update the function integration configuration
-
-1.  In the **Function** blade, select the **Integration** option from the **Developer** section.
-
-1.  In the **Integration** pane, select the **Timer** trigger.
-
-1.  In the **Edit Trigger** popup, perform the following actions:
-
-    1.  In the **Schedule** text box, change the value to **\*/30 \* \* \* \* \***.
-
-    1.  Select **Save**.
-
-#### Task 4: Observe function runs
-
-1.  In the **Function** blade, select the **Code + Test** option from the **Developer** section.
-
-1.  In the function editor, select **Logs**.
-
-1.  Observe the function run that now occurs about every 30 seconds. Each function run should render a simple message to the log.
+    >Note:** You can also observe the Successful runs of the Function by selecting **Monitor** in the left-hand navigation 
 
 #### Review
 
 In this exercise, you created a function that runs automatically based on a fixed schedule.
 
+
 ### Exercise 4: Create a function that integrates with other services
 
-#### Task 1: Create an HTTP-triggered function
+#### Task 1: Create an Azure Blob Storage Trigger function
 
-1.  In the Azure portal's navigation pane, select the **Resource groups** link.
+1.  In **Visual Studio Code** click on **Functions** under **Local Project**
 
-1.  On the **Resource groups** blade, find and then select the **Serverless** resource group that you created earlier in this lab.
+1.  Click the **Create Functions..** icon
 
-1.  On the **Serverless** blade, select the **funclogic*[yourname]*** function app that you created earlier in this lab.
+1.  Select **Azure Blob Storage Trigger**
 
-1.  From the **App Service** blade, select the **Functions** option from the **Functions** section.
+1.  Rename the Function from the default of _BlobTrigger1_ to **GetSettingInfo**.
 
-1. In the **Functions** pane, select the **+ Add** button.
+1.  Select **AzureWebJobsStorage** for the Blob Storage trigger
 
-1.  In the **New Function** popup dialog, perform the following actions:
-    
-    1.  Within the **Templates** tab, select **HTTP trigger**.
+1.  Accept the default location _samples-workitems/{name}_ and press **Enter**
 
-    1.  Within the **Details** tab, find the **New Function** text box and then enter **GetSettingInfo**.
+    >**Note:** You should now see the sample Python code for the Function
 
-    1.  Within the **Details** tab, find the **Authorization** text box and then select **Anonymous**.
 
-    1.  Select **Create Function**.
+#### Task 2: Upload the Function to Azure
 
-#### Task 2: Upload sample content
+1.  Select **GetSettingInfo** in the left-hand navigation of **Visual Studio Code**
+
+1.  Click **Deploy to Function App..**
+
+1.  Select the Function you created earlier called _FuncLogic[yourname]_
+
+1.  Your local Function should now deploy to Azure
+
+#### Task 4: Observe the running Function code
+
+1.  Return to the Azure Portal 
+
+1.  Select _funclogic[yourname]_ and observe the Metrics under the **Overview** section
+
+1.  Click on **Functions**
+
+1.  Select the **GetSettingInfo** Function
+
+1.  Under the Developer section, select **Monitor**.  We will return to the **Invocations** tab and the **Logs** tab later in the exercise
+
+#### Task 3: Upload sample content
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
 
@@ -380,13 +398,13 @@ In this exercise, you created a function that runs automatically based on a fixe
 
 1.  In the **New container** pop-up window, perform the following actions:
     
-    1.  In the **Name** text box, enter **content**.
+    1.  In the **Name** text box, enter **samples-workitems**.
     
     1.  In the **Public access level** drop-down list, select **Private (no anonymous access)**.
     
     1.  Select **OK**.
 
-1.  Back in the **Containers** section, select the recently created **content** container.
+1.  Back in the **Containers** section, select the recently created **samples-workitems** container.
 
 1.	On the **Container** blade, select **Upload**.
 
@@ -400,177 +418,24 @@ In this exercise, you created a function that runs automatically based on a fixe
     
     > **Note**: Wait for the blob to upload before you continue with this lab.
 
-#### Task 3: Configure an HTTP-triggered function
-
-1.  In the Azure portal's navigation pane, select the **Resource groups** link.
-
-1.  On the **Resource groups** blade, find and then select the **Serverless** resource group that you created earlier in this lab.
-
-1.  On the **Serverless** blade, select the **funclogic*[yourname]*** function app that you created earlier in this lab.
-
-1.  From the **App Service** blade, select the **Functions** option from the **Functions** section.
-
-1.  In the **Functions** pane, select the the existing **GetSettingInfo** function to open the editor for the function.
-
-1.  In the **Function** blade, select the **Integration** option from the **Developer** section.
-
-1.  In the **Integration** pane, select the **+ Add input**.
-
-1.  In the **Create Input** popup dialog, perform the following actions:
-
-    1.  In the **Binding Type** list, select **Azure Blob Storage**.
-
-    1.  In the **Blob parameter name** text box, enter the value **json**.
-
-    1.  In the **Path** text box, enter the value **content/settings.json**.
-
-    1.  In the **Storage account connection** list, select **AzureWebJobsStorage**.
-
-    1.  Select **OK**.
-
-1.  Back in the **Integration pane**, select the **HTTP** trigger.
-
-1.  In the **Edit Trigger** popup dialog, perform the following actions:
-
-    1.  In the **Request parameter name** text box, enter the value **request**.
-
-    1.  In the **Selected HTTP methods** check box group, ensure that only the **GET** option is selected.
-
-    1.  Select **Save**.
-
-#### Task 4: Write function code
-
-1.  In the **Function** blade, select the **Code + Test** option from the **Developer** section.
-
-1.  In the function editor, find the example **run.csx** function script:
-
-    ```
-    #r "Newtonsoft.Json"
-
-    using System.Net;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Primitives;
-    using Newtonsoft.Json;
-
-    public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
-    {
-        log.LogInformation("C# HTTP trigger function processed a request.");
-
-        string name = req.Query["name"];
-
-        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        dynamic data = JsonConvert.DeserializeObject(requestBody);
-        name = name ?? data?.name;
-
-        string responseMessage = string.IsNullOrEmpty(name)
-            ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                    : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-                return new OkObjectResult(responseMessage);
-    }
-    ```
-
-1.  **Delete** all the example code.
-
-1.  Add the following line of code to import the **Microsoft.AspNetCore.Mvc** namespace:
-
-    ```
-    using Microsoft.AspNetCore.Mvc;
-    ```
-
-1.  Add the following line of code to import the **System.Net** namespace:
-
-    ```
-    using System.Net;
-    ```
-
-1.  Add the following code block to create a new **public static** method named **Run** that returns a variable of type **IActionResult** and that also takes in variables of type **HttpRequest** and **string** as parameters named *request* and *json*:
-
-    ```
-    public static IActionResult Run(HttpRequest request, string json)
-    {
-    }
-    ```
-
-1.  In the **Run** method, enter the following line of code to return the content of the *json* parameter as the HTTP response of the function:
-
-    ```
-    return new OkObjectResult(json);
-    ```
-
-1.  Observe the **run.csx** file, which should now include:
-
-    ```
-    using Microsoft.AspNetCore.Mvc;
-    using System.Net;
-
-    public static IActionResult Run(HttpRequest request, string json)
-    {
-        return new OkObjectResult(json);
-    }
-    ```
-
-1.  Select **Save** to persist your changes to the function code.
 
 #### Task 5: Test function run
 
-1.  On the taskbar, select the **Windows Terminal** icon.
+1.  Return to the Azure Portal.  You should be in the **Monitor** blade 
 
-1.  At the open command prompt, enter the following command, and then select Enter to start the **httprepl** tool setting the base URI to the value of the URL that you copied earlier in this lab.
+1.  Observe the **Success Count** under the **Invocations** tab.  You should see a count of 1.  
 
-    ```
-    httprepl <function-app-url>
-    ```
+    >**Note:** This may take a few minutes to appear
+    
+1.  Click on the timestamp under **Date(UTC)** next to the success event.  You should see details of the blob file upload event
 
-    > **Note**: For example, if your URL is **https://funclogicstudent.azurewebsites.net**, your command would be **httprepl https://funclogicstudent.azurewebsites.net**.
+1.  Select the **Logs** tab and click **Open in Live Metrics**.  You should see incoming requests and a trace record polling for blob events
 
-1.  At the tool prompt, enter the following command, and then select Enter to browse to the relative **api** endpoint:
-
-    ```
-    cd api
-    ```
-
-1.  Enter the following command, and then select Enter to browse to the relative **getsettinginfo** endpoint:
-
-    ```
-    cd getsettinginfo
-    ```
-
-1.  Enter the following command, and then select Enter to run the **get** command for the current endpoint:
-
-    ```
-    get
-    ```
-
-1.  Observe the JSON content of the response from the function app, which should now include:
-
-    ```
-    {
-        "version": "0.2.4",
-        "root": "/usr/libexec/mews_principal/",
-        "device": {
-            "id": "21e46d2b2b926cba031a23c6919"
-        },
-        "notifications": {
-            "email": "Anais85@outlook.com",
-            "phone": "751.757.2014 x4151"
-        }
-    }
-    ```
-
-1.  Enter the following command, and then select Enter to exit the **httprepl** application:
-
-    ```
-    exit
-    ```
-
-1.  Close the currently running Windows Terminal application.
-
-1.	Return to the browser window with the Azure portal.
 
 #### Review
 
-In this exercise, you created a function that returns the content of a JSON file in Storage.
+In this exercise, you created a function that integrates with Blob Storage.
+
 
 ### Exercise 5: Clean up your subscription 
 
