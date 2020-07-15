@@ -34,18 +34,14 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
 3. Get the connection string for the namespace
 
-    ```bash
-    connectionString=$(az servicebus namespace authorization-rule keys list \
-    --resource-group $myResourceGroup \
-    --namespace-name $namespaceName \
-    --name RootManageSharedAccessKey \
-    --query primaryConnectionString --output tsv)
-    echo $connectionString
-    ```
+   1. In the **Azure Portal** go to the new resource that was created
+   1. Select **Shared Access Policies** under the Settings section in the left-hand navigation
+   1. Click the _Root ManageSharedAccessKey_ link
+   1. Copy the value of the **Primary Connect String**.  
+   1. Paste the connection string to a temporary location such as Notepad. You will need it in the next step.
 
-After the last command runs, copy and paste the connection string to a temporary location such as Notepad. You will need it in the next step.
 
-## Create console app to send messages to the queue
+## Create Python application to send messages to the queue
 
 1. Set up the new console app on your local machine
     * Create a new folder named *az204svcbusSend*.
@@ -55,11 +51,12 @@ After the last command runs, copy and paste the connection string to a temporary
 
 2. In *Program.cs*, add the following `using` statements at the top of the namespace definition, before the class declaration:
 
-    ```csharp
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
+    ```
+    from azure.servicebus import ServiceBusClient
+
+    sb_client = ServiceBusClient.from_connection_string('<Connection_string>')
+
+    sb_client.create_queue("taskqueue")
     ```
 
 3. Within the `Program` class, declare the following variables. Set the `ServiceBusConnectionString` variable to the connection string that you obtained when creating the namespace:
