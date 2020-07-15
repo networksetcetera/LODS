@@ -1,17 +1,16 @@
-# Demo - Send and receive messages using Service Bus Queues
 
-# Demo: Use .NET Core to send and receive messages from a Service Bus queue
+# Demo: Use Python to send and receive messages from a Service Bus queue
 
 In this demo you will learn how to:
 
-* Create a Service Bus namespace, and queue, using the Azure CLI.
-* Create a .NET Core console application to send a set of messages to the queue.
-* Create a .NET Core console application to receive those messages from the queue.
+* Create a Service Bus namespace using the Azure Portal.
+* Create a Python application to create a queue and send a set of messages to the queue.
+* Create a Python application to receive those messages from the queue.
 
 
 ## Prerequisites
 
-This demo is performed in the Cloud Shell, and in Visual Studio Code. The code examples below rely on the **Microsoft.Azure.ServiceBus** NuGet package.
+This demo is performed in the Azure Portal, and in Visual Studio Code. The code examples below rely on the **Azure-ServiceBus** PIP package.
 
 
 ### Login to Azure
