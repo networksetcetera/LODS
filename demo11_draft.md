@@ -17,33 +17,20 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
 1. Login in to the Azure Portal: [https://portal.azure.com](https://portal.azure.com) and launch the Cloud Shell. Be sure to select **Bash** as the shell.
 
-2. Create a resource group, replace `<myRegion>` with a location that makes sense for you. Copy the first line by itself and edit the value.
+1. Create a resource group, replace `<myRegion>` with a location that makes sense for you. Copy the first line by itself and edit the value.
 
-    ```bash
-    myLocation=<myRegion>
-    myResourceGroup="az204-svcbusdemo-rg"
-    az group create -n $myResourceGroup -l $myLocation
-    ```
 
-## Create the Service Bus namespace and queue
+## Create the Service Bus namespace
 
-1. Create a Service Bus messaging namespace with a unique name, the script below will generate a unique name for you. It will take a few minutes for the command to finish.
-
-    ```bash
-    namespaceName=az204svcbus$RANDOM
-    az servicebus namespace create \
-    --resource-group $myResourceGroup \
-    --name $namespaceName \
-    --location $myLocation
-    ```
-
-2. Create a Service Bus queue
-
-    ```bash
-    az servicebus queue create --resource-group $myResourceGroup \
-    --namespace-name $namespaceName \
-    --name az204-queue
-    ```
+1. Create a Service Bus messaging namespace with a unique name, for example _az204svcbus[yourname]_ 
+   
+   1. In the **Azure Portal** search for _Service Bus_ 
+   1. Select the **Service Bus** option
+   1. Click **Add**
+   1. Select the **Resource Group** you created earlier
+   1. Type in the **Namespace name** of _az204svcbus[yourname]_ 
+   1. Select the region
+   1. Use the **Standard** pricing tier
 
 3. Get the connection string for the namespace
 
