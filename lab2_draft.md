@@ -232,6 +232,8 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 1.  Click on **Get Function URL** and select **Copy to clipboard**
 
+    >Note: You can also inspect the code for the Function using the left navigation in the Azure Portal.  This should reflect the code you uloaded from **Visual Studio Code**
+
 
 
 #### Task 5: Test function run by using a browser and curl
