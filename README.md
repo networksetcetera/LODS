@@ -356,6 +356,8 @@ Demo11 - working (Service Bus, See files in Onedrive)
 
 Demo04 - found a better example (https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python)
 
+Code version is here (https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python#review-the-code)
+
 Demo06b - daemon example MSAL (https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-python-daemon#more-information) 
 
 Demo06c - full example (https://github.com/Azure-Samples/ms-identity-python-daemon/tree/master/1-Call-MsGraph-WithSecret)
