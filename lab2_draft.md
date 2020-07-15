@@ -175,107 +175,48 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 1.  You will see 3 options. Select **Open in Current Window**.
 
-   >**Note:** A new Python function will be created
+    >**Note:** A new Python function will be created
 
-#### Task 2: Write function code
+#### Task 2: Test the function code locally
 
-1.  In the **Function** blade, select the **Code + Test** option from the **Developer** section.
+1.  In **Visual Studio Code** blade, select **Start Debugging** from the **Debug** menu.
 
-1.  In the function editor, find the example **run.csx** function script:
+    >**Note:** You may be asked to install _Azure Functions Core Tools_
+    
+1.  Now that the Function is running, return to the _Functions_ tool in **Visual Studio Code**
 
+1.  Right-click on the Function name **Echo** and select **Copy Function URL** 
+
+1.  Open a browser and paste the Function URL, for example _localhost:7071/api/Echo_
+
+1.  The Function will return a string _Please pass a name on the query string or in the request body_
+
+1.  Add the following query to the end of the URL
     ```
-    #r "Newtonsoft.Json"
-
-    using System.Net;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Primitives;
-    using Newtonsoft.Json;
-
-    public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
-    {
-        log.LogInformation("C# HTTP trigger function processed a request.");
-
-        string name = req.Query["name"];
-
-        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        dynamic data = JsonConvert.DeserializeObject(requestBody);
-        name = name ?? data?.name;
-
-        string responseMessage = string.IsNullOrEmpty(name)
-            ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                    : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-                return new OkObjectResult(responseMessage);
-    }
+    ?name=Azure
     ```
-
-1.  Delete all the example code.
-
-1.  Add the following line of code to import the **Microsoft.AspNetCore.Mvc** namespace:
-
+1.  The local Function will return a response
     ```
-    using Microsoft.AspNetCore.Mvc;
+    Hello Azure
     ```
+    >**Note:** You can substitute any name or string for _Azure_
+    
+1.  Click **Disconnect** to stop the Function
 
-1.  Add the following line of code to import the **System.Net** namespace:
 
-    ```
-    using System.Net;
-    ```
+#### Task 3: Deploy the Function to Azure and test function running in the portal
 
-1.  Add the following code block to create a new **public static** method named **Run** that returns a variable of type **IActionResult** and that also takes in variables of type **HttpRequest** and **ILogger** as parameters named *req* and *log*:
+1.  In **Visual Studio Code** return to the **Functions** tool under **Azure** and select the _Echo HTTP_ Function
 
-    ```
-    public static IActionResult Run(HttpRequest req, ILogger log)
-    {
-    }
-    ```
+1.  Click **Deploy to Function app..**
 
-1.  In the **Run** method, enter the following line of code to render a fixed message:
+1.  Select the Azure Function you created earlier
 
-    ```
-    log.LogInformation("Received a request");
-    ```
+    >**Note:** You will get a message _Deploying to AzureFunction[yourname]_
 
-1.  Enter the following line of code to echo the body of the HTTP request as the HTTP response:
+1.  Wait until you get a confirmation message that the deployment is complete. Click **View Output**
 
-    ```
-    return new OkObjectResult(req.Body);
-    ```
 
-1.  Observe the **run.csx** file, which should now include:
-
-    ```
-    using System.Net;
-    using Microsoft.AspNetCore.Mvc;
-
-    public static IActionResult Run(HttpRequest req, ILogger log)
-    {
-        log.LogInformation("Received a request");
-
-        return new OkObjectResult(req.Body);
-    }
-    ```
-
-1.  Select **Save** to persist your changes to the function code.
-
-#### Task 3: Test function run in the portal
-
-1.  Select **Test/Run**.
-
-1.  In the popup dialog that appears, perform the following actions:
-
-    1.  In the **Input** tab, in the **Body** text box, enter the following JSON request body:
-
-        ```
-        {
-            "message": "Hello, World!"
-        }
-        ```
-
-    1.  In the **Input** tab, select **Run**.
-
-    1.  In the **Output** tab, observe the results of the test run. The results should echo the original request body exactly.
 
 #### Task 4: Get a base function URL
 
@@ -283,73 +224,59 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 1.  On the **Resource groups** blade, find and then select the **Serverless** resource group that you created earlier in this lab.
 
-1.  On the **Serverless** blade, select the **funclogic*[yourname]*** function app that you created earlier in this lab.
+1.  On the **Serverless** blade, select the **funclogic[yourname]** function app that you created earlier in this lab.
 
-1.  On the **App Service** blade, copy the value of the **URL** text box. You'll use this value later in the lab.
+1.  In the left navigation of the Azure Portal select **Functions**
 
-#### Task 5: Test function run by using httprepl
+1.  Click on the function called **Echo**
 
-1.  On the taskbar, select the **Windows Terminal** icon.
+1.  Click on **Get Function URL** and select **Copy to clipboard**
 
-1.  At the open command prompt, enter the following command, and then select Enter to start the **httprepl** tool setting the base Uniform Resource Identifier (URI) to the value of the URL that you copied earlier in this lab.
 
+
+#### Task 5: Test function run by using a browser and curl
+
+1.  Open a new browser tab and paste the URL for the Function then hit **enter**
+
+1.  Notice the response from the function
+
+1.  Add the following query to the end of the URL
     ```
-    httprepl <function-app-url>
+    ?name=Azure
     ```
-
-    > **Note**: For example, if your URL is **https://funclogicstudent.azurewebsites.net**, your command would be **httprepl https://funclogicstudent.azurewebsites.net**.
-
-1.  Observe the error message displayed by the httprepl tool. This message occurs because the tool is searching for a Swagger definition file to use to "traverse" the API. Because your Logic App does not produce a Swagger definition file, you will need to traverse the API manually.
-
-1.  At the tool prompt, enter the following command, and then select Enter to browse to the relative **api** directory:
-
+1.  The Azure Function will return a response
     ```
-    cd api
+    Hello Azure
     ```
+1.  Open a terminal using the icon on the taskbar of the lab machine
 
-1.  Enter the following command, and then select Enter to browse to the relative **echo** directory:
-
+1.  Type the following command to ensure that **curl** is installed
     ```
-    cd echo
+    curl -V
     ```
+1.  Copy the URL for the Azure Function from the Azure Portal as you did in **Task 4**
 
-1.  Enter the following command, and then select Enter to run the **post** command sending in an HTTP request body set to a numeric value of **3** by using the **\-\-content** option:
-
+1.  In the terminal window type the following command
     ```
-    post --content 3
+    curl <URL>
     ```
+    **Note:** Paste the value for the URL you copied earlier in <URL>.  You can do this by right-clicking after the **curl** command and selecting **Paste**
 
-1.  Enter the following command, and then select Enter to run the **post** command sending in an HTTP request body set to a numeric value of **5** by using the **\-\-content** option:
+1.  You will get a similar response compared to the local test
 
+1.  In the terminal window type the following command, by appending the query after the URL
     ```
-    post --content 5
+    curl <URL>?name=Azure
     ```
-
-1.  Enter the following command, and then select Enter to run the **post** command sending in an HTTP request body set to a string value of **Hello** by using the **\-\-content** option:
-
+1.  You should now get a response from the Azure Function
     ```
-    post --content "Hello"
+    Hello Azure
     ```
-
-1.  Enter the following command, and then select Enter to run the **post** command sending in an HTTP request body set to a JavaScript Object Notation (JSON) value of **{"msg": "Successful"}** by using the **\-\-content** option:
-
-    ```
-    post --content "{"msg": "Successful"}"
-    ```
-
-1.  Enter the following command, and then select Enter to exit the **httprepl** application:
-
-    ```
-    exit
-    ```
-
-1.  Close the currently running Windows Terminal application.
-
-1.	Return to the browser window with the Azure portal.
 
 #### Review
 
 In this exercise, you created a basic function that echoes the content sent via an HTTP POST request.
+
 
 ### Exercise 3: Create a function that triggers on a schedule
 
