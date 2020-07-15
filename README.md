@@ -148,7 +148,7 @@ See screenshots in **images**
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python
 
 other links
-required for VS Coe Python extension
+required for VS Code Python extension
 https://dotnet.microsoft.com/download
 
 https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions
@@ -373,7 +373,7 @@ Move resources to another subscription (https://medium.com/@calloncampbell/movin
 
 Lab02 - procedure for Azure Functions in Python using VS Code (https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python)
 
-- download node.js (64-bit)
+- download node.js (64-bit), select **chocolatey** option
 
 
 
