@@ -142,7 +142,7 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 ### Exercise 2: Create a function that's triggered by an HTTP request using Visual Studio Code
 
-> **Note**: The interface for Azure Functions has been updated. Also, as of this writing, authoring and editing Python Functions are supported only in Visual Studio Code.
+> **Note**: The interface for Azure Functions has been updated. (Classic version and current branch). Also, as of this writing, authoring and editing Python Functions are supported only in Visual Studio Code. You can then upload your Functions to Azure and view them from the Azure Portal.
 
 ![Functions extension](https://github.com/networksetcetera/LODS/blob/master/images/lab2/Screen%20Shot%202020-06-30%20at%2010.37.02%20AM.png)
 
@@ -151,25 +151,31 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 1.  Open **Visual Studio Code** and install the _Azure Functions_ extension
     ![extension installed](https://github.com/networksetcetera/LODS/blob/master/images/lab2/Screen%20Shot%202020-06-30%20at%2010.29.49%20AM.png)
 
-1.  Connect to your Azure account in **Visual Studio Code**
+1.  Select the Azure Icon in the left navigation 
 
-1.  In **Visual Studio Code** open the folder on the F: drive for Lab05/starter 
+1.  Expand **Functions**
 
-1.  On the **Serverless** blade, select the _funclogic[yourname]_ function app that you created earlier in this lab.
+1.  Select **Sign in to Azure**
 
-1.  From the **App Service** blade, select the **Functions** option from the **Functions** section.
-
-1. In the **Functions** pane, select the **+ Add** button.
-
-1.  In the **New Function** popup dialog, perform the following actions:
+    >**Note:** You should now see the new Function you created earlier
     
-    1.  Within the **Templates** tab, select **HTTP Trigger**.
+1.  In **Visual Studio Code** click **Create new project** and open the folder on the F: drive for Lab05/starter.
 
-    1.  Within the **Details** tab, find the **New Function** text box and then enter **Echo**.
+1.  Select **Python** as the language
 
-    1.  Within the **Details** tab, find the **Authorization** text box and then select **Anonymous**.
+1.  Select the Python interpreter
 
-    1.  Select **Create Function**.
+    >**Note:** This should already be installed.  For example _Python 3.8.3_
+
+1.  Select **HTTP Trigger**.
+
+1.  Rename the function from _HttpTrigger1_ to **Echo** and press **enter**.
+
+1.  Within the **Authorization** text box select **Anonymous**.
+
+1.  You will see 3 options. Select **Open in Current Window**.
+
+   >**Note:** A new Python function will be created
 
 #### Task 2: Write function code
 
