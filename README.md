@@ -353,3 +353,5 @@ Sent Lab11 for review
 ## July 14
 
 Demo11 - working (Service Bus, See files in Onedrive)
+
+Demo04 - found a better example (https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python)
