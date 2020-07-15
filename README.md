@@ -368,3 +368,12 @@ Demo06c - full example (https://github.com/Azure-Samples/ms-identity-python-daem
 
 Move resources to another subscription (https://medium.com/@calloncampbell/moving-your-azure-resources-to-another-subscription-or-resource-group-1644f43d2e07)
 (https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription)
+
+## July 15
+
+Lab02 - procedure for Azure Functions in Python using VS Code (https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python)
+
+- download node.js (64-bit)
+
+
+
