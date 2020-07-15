@@ -252,7 +252,7 @@ In this exercise, you created the Azure resources that you'll use for this lab.
 
 1.  Type the following command to ensure that **curl** is installed
     ```
-    curl -V
+    curl --version
     ```
 1.  Copy the URL for the Azure Function from the Azure Portal as you did in **Task 4**
 
