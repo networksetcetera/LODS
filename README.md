@@ -363,3 +363,8 @@ Demo06b - daemon example MSAL (https://docs.microsoft.com/en-us/azure/active-dir
 Demo06c - full example (https://github.com/Azure-Samples/ms-identity-python-daemon/tree/master/1-Call-MsGraph-WithSecret)
 - acquire token
 - use the token to get user profile from MS Graph API
+
+**Note:** The subscription will end in 4 days
+
+Move resources to another subscription (https://medium.com/@calloncampbell/moving-your-azure-resources-to-another-subscription-or-resource-group-1644f43d2e07)
+(https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription)
