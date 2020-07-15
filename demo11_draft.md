@@ -32,7 +32,7 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
    1. Select the region
    1. Use the **Standard** pricing tier
 
-3. Get the connection string for the namespace
+1. Get the connection string for the namespace
 
    1. In the **Azure Portal** go to the new resource that was created
    1. Select **Shared Access Policies** under the Settings section in the left-hand navigation
@@ -43,13 +43,29 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
 ## Create Python application to send messages to the queue
 
-1. Set up the new console app on your local machine
-    * Create a new folder named *az204svcbusSend*.
-    * Open a terminal in the new folder and run `dotnet new console`
-    * Run the `dotnet add package Microsoft.Azure.ServiceBus` command to ensure you have the packages you need.
-    * Launch Visual Studio Code and open the new folder.
 
-2. In *Program.cs*, add the following `using` statements at the top of the namespace definition, before the class declaration:
+1. Open Windows Explorer and create a new folder named *az204svcbusSend*.
+
+1. Open the new folder in **Visual Studio Code**
+
+1. Ensure that Python is installed
+
+1. Ensure that the Python Extension is installed under **extensions** 
+
+1. Upgrade PIP
+
+1. Create a virtual environment for Python
+
+1. Create a new text file called **requirements.txt** and add the following lines
+    ```
+    azure
+    azure-servicebus
+    ```
+    >Note: we will use this file to install the required libraries
+    
+1. Create a new Python file called *CreateQueue.py*
+
+1. In *CreateQueue.py*, add the following:
 
     ```
     from azure.servicebus import ServiceBusClient
