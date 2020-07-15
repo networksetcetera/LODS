@@ -272,6 +272,8 @@ In this exercise, you created the Azure resources that you'll use for this lab.
     ```
     Hello Azure
     ```
+    
+    >**Note:** You can observe the execution of the Azure Function in the Azure Portal.  In the Overview blade for the funtion you will see **Total Execution count**
 
 #### Review
 
