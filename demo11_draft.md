@@ -12,6 +12,7 @@ In this demo you will learn how to:
 
 This demo is performed in the Azure Portal, and in Visual Studio Code. The code examples below rely on the **Azure-ServiceBus** PIP package.
 
+>**Note:** In Python, the spacing is important for the correct interpretation of the code. Be careful to keep the indentations shown in the example code when copying and pasting to the lab machine.
 
 ### Login to Azure
 
@@ -86,7 +87,7 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
     sb_client.create_queue("taskqueue")
     ```
-    >Note: You will need to substitute your vale for <Connection_string> 
+    >Note: You will need to substitute your value for <Connection_string> 
     
 1. Login to your Azure account
     ```
@@ -101,21 +102,73 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
 ## Step 2: Write code to send messages to the queue
 
+1. Create a new Python file called *SendMessages.py*
+
+1. In *SendMessages.py*, type the following:
+
+    ```
+    from azure.servicebus import QueueClient, Message
+
+    # Create the QueueClient
+    queue_client = QueueClient.from_connection_string('<Connection_string>',"taskqueue")
+
+    # Send a test message to the queue
+    msg = Message(b'Test Message')
+    queue_client.send(msg)
+
+    print("Messages sent")
+
+    ```
+    >Note: You will need to substitute your value for <Connection_string> 
+    
+1.  Select _SendMessages.py_ in the left navigation and run the Python program by pressing the green **run** button in the top right
+
 1. Login to the Azure Portal and navigate to the *az204-queue* you created earlier and select **Overview** to show the Essentials screen. 
 
-Notice that the Active Message Count value for the queue is now 10. Each time you run the sender application without retrieving the messages (as described in the next section), this value increases by 10. 
+Notice that the Active Message Count value for the queue is now 1. 
+
+1.  Find the line of code with the message value
+    ```
+    msg = Message(b'Test Message')
+    ```
+1.  Change the message by replacing the line above with this code
+    ```
+    msg = Message(b'Test Message 2')
+    ```
+1. Refresh the Azure Portal     
+
+Notice that the Active Message Count value for the queue is now 2. Each time you run the sender application without retrieving the messages (as described in the next section), this value increases by 1. 
 
 
 ## Step 3: Write code to receive messages to the queue
 
-1. Set up the new console app
-    * Create a new folder named *az204svcbusRec*.
-    * Open a terminal in the new folder and run `dotnet new console`
-    * Run the `dotnet add package Microsoft.Azure.ServiceBus` command to ensure you have the packages you need.
-    * Launch Visual Studio Code and open the new folder.
+1. Create a new Python file called *ReceiveMessages.py*
 
+1. In *ReceiveMessages.py*, type the following:
 
+    ```
+    from azure.servicebus import QueueClient, Message
+
+    # Create the QueueClient
+    queue_client = QueueClient.from_connection_string("<Connection_string>", "taskqueue")
+
+    # Receive the message from the queue
+    with queue_client.get_receiver() as queue_receiver:
+        messages = queue_receiver.fetch_next(timeout=3)
+        for message in messages:
+            print(message)
+            message.complete()
+
+    print("Messages received")
+    ```
+    >Note: You will need to substitute your vale for <Connection_string>.  
+
+1.  Select _ReceiveMessages.py_ in the left navigation and run the Python program by pressing the green **run** button in the top right
+
+1. You should get an output at the command prompt showing the 2 messages that were received.  These messages have now been removed from the Service Bus queue. 
 
 1. Check the portal again. Notice that the **Active Message Count** value is now 0. You may need to refresh the portal page.
+
+## End of demonstration
 
 
