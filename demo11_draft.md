@@ -40,11 +40,11 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
    1. Copy the value of the **Primary Connect String**.  
    1. Paste the connection string to a temporary location such as Notepad. You will need it in the next step.
 
+## Step 1: Write code to create the queue
 
 ## Create Python application to send messages to the queue
 
-
-1. Open Windows Explorer and create a new folder named *az204svcbusSend*.
+1. Open Windows Explorer and create a new folder named *az204svcbus*.
 
 1. Open the new folder in **Visual Studio Code**
 
@@ -94,96 +94,17 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
     ```
     >Note: You will see a login screen in your browser. Use your Azure credentials to log in.  You should get a confirmation at the command-line
     
-1.  Run the Python program by pressing the green **run** button in the top right
+1.  Select _CreateQueue.py_ in the left navigation and run the Python program by pressing the green **run** button in the top right
 
 1.  Go to the Azure Portal and confirm that a new Sevice Bus queue has been created called _taskqueue_
 
-3. Within the `Program` class, declare the following variables. Set the `ServiceBusConnectionString` variable to the connection string that you obtained when creating the namespace:
 
-    ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string QueueName = "az204-queue";
-    static IQueueClient queueClient;
-    ```
+## Step 2: Write code to send messages to the queue
 
-3. Replace the default contents of `Main()` with the following line of code:
-
-    ```csharp
-    public static async Task Main(string[] args)
-    {    
-        const int numberOfMessages = 10;
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Send messages.
-        await SendMessagesAsync(numberOfMessages);
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-
-4. Directly after `Main()`, add the following asynchronous `MainAsync()` method that calls the send messages method:
-
-    ```csharp
-    static async Task MainAsync()
-    {
-        const int numberOfMessages = 10;
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Send messages.
-        await SendMessagesAsync(numberOfMessages);
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-
-5. Directly after the `MainAsync()` method, add the following `SendMessagesAsync()` method that performs the work of sending the number of messages specified by `numberOfMessagesToSend` (currently set to 10):
-
-    ```csharp
-    static async Task SendMessagesAsync(int numberOfMessagesToSend)
-    {
-        try
-        {
-            for (var i = 0; i < numberOfMessagesToSend; i++)
-            {
-                // Create a new message to send to the queue.
-                string messageBody = $"Message {i}";
-                var message = new Message(Encoding.UTF8.GetBytes(messageBody));
-
-                // Write the body of the message to the console.
-                Console.WriteLine($"Sending message: {messageBody}");
-
-                // Send the message to the queue.
-                await queueClient.SendAsync(message);
-            }
-        }
-        catch (Exception exception)
-        {
-            Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-        }
-    }
-    ```
-
-6. Save the file and run the following commands in the terminal.
-    ```bash
-    dotnet build
-    dotnet run
-    ```
-
-7. Login to the Azure Portal and navigate to the *az204-queue* you created earlier and select **Overview** to show the Essentials screen. 
+1. Login to the Azure Portal and navigate to the *az204-queue* you created earlier and select **Overview** to show the Essentials screen. 
 
 Notice that the Active Message Count value for the queue is now 10. Each time you run the sender application without retrieving the messages (as described in the next section), this value increases by 10. 
+
 
 ## Step 3: Write code to receive messages to the queue
 
@@ -193,124 +114,8 @@ Notice that the Active Message Count value for the queue is now 10. Each time yo
     * Run the `dotnet add package Microsoft.Azure.ServiceBus` command to ensure you have the packages you need.
     * Launch Visual Studio Code and open the new folder.
 
-2. In *Program.cs*, add the following `using` statements at the top of the namespace definition, before the class declaration:
-
-    ```csharp
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-    ```
-
-3. Within the `Program` class, declare the following variables. Set the `ServiceBusConnectionString` variable to the connection string that you obtained when creating the namespace:
-
-    ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string QueueName = "az204-queue";
-    static IQueueClient queueClient;
-    ```
-
-4. Replace the `Main()` method with the following:
-
-    ```csharp
-    public static async Task Main(string[] args)
-    {    
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Register the queue message handler and receive messages in a loop
-        RegisterOnMessageHandlerAndReceiveMessages();
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-
-5. Directly after `Main()`, add the following asynchronous `MainAsync()` method that calls the `RegisterOnMessageHandlerAndReceiveMessages()` method:
-
-    ```csharp
-    static async Task MainAsync()
-    {
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Register the queue message handler and receive messages in a loop
-        RegisterOnMessageHandlerAndReceiveMessages();
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-
-6. Directly after the `MainAsync()` method, add the following method that registers the message handler and receives the messages sent by the sender application:
-
-    ```csharp
-    static void RegisterOnMessageHandlerAndReceiveMessages()
-    {
-        // Configure the message handler options in terms of exception handling, number of concurrent messages to deliver, etc.
-        var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
-        {
-            // Maximum number of concurrent calls to the callback ProcessMessagesAsync(), set to 1 for simplicity.
-            // Set it according to how many messages the application wants to process in parallel.
-            MaxConcurrentCalls = 1,
-
-            // Indicates whether the message pump should automatically complete the messages after returning from user callback.
-            // False below indicates the complete operation is handled by the user callback as in ProcessMessagesAsync().
-            AutoComplete = false
-        };
-
-        // Register the function that processes messages.
-        queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-    }
-    ```
-
-7. Directly after the previous method, add the following `ProcessMessagesAsync()` method to process the received messages:
-
-    ```csharp
-    static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-    {
-        // Process the message.
-        Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-        // Complete the message so that it is not received again.
-        // This can be done only if the queue Client is created in ReceiveMode.PeekLock mode (which is the default).
-        await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-        // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-        // If queueClient has already been closed, you can choose to not call CompleteAsync() or AbandonAsync() etc.
-        // to avoid unnecessary exceptions.
-    }
-    ```
-
-8. Finally, add the following method to handle any exceptions that might occur:
-
-    ```csharp
-    // Use this handler to examine the exceptions received on the message pump.
-    static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-    {
-        Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-        var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-        Console.WriteLine("Exception context for troubleshooting:");
-        Console.WriteLine($"- Endpoint: {context.Endpoint}");
-        Console.WriteLine($"- Entity Path: {context.EntityPath}");
-        Console.WriteLine($"- Executing Action: {context.Action}");
-        return Task.CompletedTask;
-    }    
-    ```
-
-6. Save the file and run the following commands in the terminal.
-    * `dotnet build`
-    * `dotnet run`
 
 
-7. Check the portal again. Notice that the **Active Message Count** value is now 0. You may need to refresh the portal page.
+1. Check the portal again. Notice that the **Active Message Count** value is now 0. You may need to refresh the portal page.
 
 
