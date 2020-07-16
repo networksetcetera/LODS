@@ -135,6 +135,8 @@ Notice that the Active Message Count value for the queue is now 1.
     ```
     msg = Message(b'Test Message 2')
     ```
+1.  Select _SendMessages.py_ in the left navigation and re-run the Python program by pressing the green **run** button in the top right
+
 1. Refresh the Azure Portal     
 
 Notice that the Active Message Count value for the queue is now 2. Each time you run the sender application without retrieving the messages (as described in the next section), this value increases by 1. 
