@@ -392,3 +392,9 @@ Suggest this ink for installing Python (https://docs.microsoft.com/en-us/azure/d
 Demo06b - another example (https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-desktop-acquire-token?tabs=python)
 
 MSAL Python doesn't provide an interactive acquire token method directly. Instead, it requires the application to send an authorization request in its implementation of the user interaction flow to obtain an authorization code. This code can then be passed to the acquire_token_by_authorization_code method to get the token.
+
+Lab05 - Python program to display host name and IP address
+
+(https://www.geeksforgeeks.org/display-hostname-ip-address-python/)
+
+(https://www.geeksforgeeks.org/python-program-find-ip-address/)
