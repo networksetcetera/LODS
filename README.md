@@ -414,4 +414,5 @@ Suggested order:
 Wait for feedback on Demo06 - here it is!
 
 First question (ref Module 01a (Python): fine to go with a single/simple app. Goal of the lab doesn’t require complexity.
+
 Second question (ref demo for Module 6 = MSAL and Graph API): Feel free to use the 2nd technique, just want something that will work.
