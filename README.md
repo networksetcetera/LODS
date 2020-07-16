@@ -406,3 +406,9 @@ Access Python and AzureRM from the Cloud Shell
     ```
     az account get-access-token
     ```
+
+Suggested order:
+- Lab05
+- Demo04
+
+Wait for feedback on Demo06
