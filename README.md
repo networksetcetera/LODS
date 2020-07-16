@@ -401,3 +401,8 @@ Lab05 - Python program to display host name and IP address
 
 Access Python and AzureRM from the Cloud Shell
 (https://msftstack.wordpress.com/2017/07/30/azure-cloud-shell-python-and-container-instances/)
+
+>Note: The latest CLI versions now also include a command to display the current authentication token. Try:
+    ```
+    az account get-access-token
+    ```
