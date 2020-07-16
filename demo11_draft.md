@@ -33,13 +33,13 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
    1. Select the region
    1. Use the **Standard** pricing tier
 
-1. Get the connection string for the namespace
+1. Get the Connection String for the namespace
 
    1. In the **Azure Portal** go to the new resource that was created
    1. Select **Shared Access Policies** under the Settings section in the left-hand navigation
    1. Click the _Root ManageSharedAccessKey_ link
-   1. Copy the value of the **Primary Connect String**.  
-   1. Paste the connection string to a temporary location such as Notepad. You will need it in the next step.
+   1. Copy the value of the **Primary Connection String**.  
+   1. Paste the Connection String to a temporary location such as Notepad. You will need it in the next step.
 
 ## Step 1: Write code to create the queue
 
@@ -55,7 +55,7 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
 1. Open a terminal by using the **Command Palette** under the **View** menu
 
-1. Upgrade the PIP package manager 
+1. Upgrade the PIP package manager (optional)
     ```
     python -m pip install --upgrade pip
     ```
@@ -163,7 +163,7 @@ Notice that the Active Message Count value for the queue is now 2. Each time you
 
     print("Messages received")
     ```
-    >Note: You will need to substitute your vale for <Connection_string>.  
+    >Note: You will need to substitute your value for <Connection_string>.  
 
 1.  Select _ReceiveMessages.py_ in the left navigation and run the Python program by pressing the green **run** button in the top right
 
