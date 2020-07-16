@@ -52,9 +52,21 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
 1. Ensure that the Python Extension is installed under **extensions** 
 
-1. Upgrade PIP
+1. Open a terminal by using the **Command Palette** under the **View** menu
 
+1. Upgrade the PIP package manager 
+    ```
+    python -m pip install --upgrade pip
+    ```
 1. Create a virtual environment for Python
+    ```
+    python -m venv .venv
+    ```
+1.  Activate the virtual environment
+    ```
+    .venv\scripts\activate
+    ```
+    >Note: You should see a new command prompt that includes the virtual environment
 
 1. Create a new text file called **requirements.txt** and add the following lines
     ```
@@ -65,7 +77,7 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
     
 1. Create a new Python file called *CreateQueue.py*
 
-1. In *CreateQueue.py*, add the following:
+1. In *CreateQueue.py*, type the following:
 
     ```
     from azure.servicebus import ServiceBusClient
@@ -74,6 +86,17 @@ This demo is performed in the Azure Portal, and in Visual Studio Code. The code 
 
     sb_client.create_queue("taskqueue")
     ```
+    >Note: You will need to substitute your vale for <Connection_string> 
+    
+1. Login to your Azure account
+    ```
+    az login
+    ```
+    >Note: You will see a login screen in your browser. Use your Azure credentials to log in.  You should get a confirmation at the command-line
+    
+1.  Run the Python program by pressing the green **run** button in the top right
+
+1.  Go to the Azure Portal and confirm that a new Sevice Bus queue has been created called _taskqueue_
 
 3. Within the `Program` class, declare the following variables. Set the `ServiceBusConnectionString` variable to the connection string that you obtained when creating the namespace:
 
