@@ -385,3 +385,8 @@ Demo06 - Graph API (https://docs.microsoft.com/en-US/graph/api/user-get?view=gra
 Demo11 - complete, files in Onedrive
 
 Suggest this ink for installing Python (https://docs.microsoft.com/en-us/azure/developer/python/configure-local-development-environment?tabs=cmd)
+
+
+## July 17
+
+Demo06b - another example (https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-desktop-acquire-token?tabs=python)
