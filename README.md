@@ -418,3 +418,5 @@ First question (ref Module 01a (Python): fine to go with a single/simple app. Go
 Second question (ref demo for Module 6 = MSAL and Graph API): Feel free to use the 2nd technique, just want something that will work.
 
 Good ref for Lab05 (https://www.wintellect.com/containerize-python-app-5-minutes/)
+
+Lab05 - This worked (https://runnable.com/docker/python/dockerize-your-python-application)
