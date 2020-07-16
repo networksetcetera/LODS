@@ -382,4 +382,6 @@ Lab02 - complete, files in Onedrive
 
 Demo06 - Graph API (https://docs.microsoft.com/en-US/graph/api/user-get?view=graph-rest-1.0&tabs=http)
 
+Demo11 - complete, files in Onedrive
 
+Suggest this ink for installing Python (https://docs.microsoft.com/en-us/azure/developer/python/configure-local-development-environment?tabs=cmd)
