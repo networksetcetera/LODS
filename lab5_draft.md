@@ -299,89 +299,49 @@ Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureE
     cd ~/clouddrive/ipcheck
     ```
 
-1.  Enter the following command, and then select Enter to create a new .NET console application in the current directory:
-
-    ```
-    dotnet new console --output . --name ipcheck
-    ```
-
 1.  Enter the following command, and then select Enter to create a new file in the **\~/clouddrive/ipcheck** directory named **Dockerfile**:
 
     ```
     touch Dockerfile
     ```
 
-1.  Enter the following command, and then select Enter to open the embedded graphical editor in the context of the current directory:
+#### Task 2: Create and test a Python application
+
+1.  At the **Cloud Shell** type the following command to create a new Python script
 
     ```
-    code .
+    code ipcheck.py
     ```
-
-#### Task 2: Create and test a .NET application
-
-1.  In the graphical editor, find the FILES pane, and then open the **Program.cs** file to open it in the editor.
-
-1.  Delete the entire contents of the **Program.cs** file.
-
-1.  Copy and paste the following code into the **Program.cs** file:
+    
+1.  In the graphical editor, type the following:
 
     ```
-    public class Program
-    {
-        public static void Main(string[] args)
-        {        
-            // Check if network is available
-            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
-            {
-                System.Console.WriteLine("Current IP Addresses:");
-
-                // Get host entry for current hostname
-                string hostname = System.Net.Dns.GetHostName();
-                System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry(hostname);
-                
-                // Iterate over each IP address and render their values
-                foreach(System.Net.IPAddress address in host.AddressList)
-                {
-                    System.Console.WriteLine($"\t{address}");
-                }
-            }
-            else
-            {
-                System.Console.WriteLine("No Network Connection");
-            }
-        }
-    }
+    # Python Program to Get IP Address 
+    import socket    
+    hostname = socket.gethostname()    
+    IPAddr = socket.gethostbyname(hostname)    
+    print("Your Computer Name is:" + hostname)    
+    print("Your Computer IP Address is:" + IPAddr)
     ```
 
-1.  Save the **Program.cs** file by using the menu in the graphical editor or the Ctrl+S keyboard shortcut.  Don't close the graphical editor.
+1.  Save the **ipcheck.py** file by using the menu in the graphical editor or the Ctrl+S keyboard shortcut.  
 
 1.  Back at the command prompt, enter the following command, and then select Enter to run the application:
 
     ```
-    dotnet run
+    python ipcheck.py
     ```
 
-1.  Find the results of the run. At least one IP address should be listed for the Cloud Shell instance.
+1.  Find the results of the run. The name of the computer and at least one IP address should be listed for the Cloud Shell instance.
 
 1.  In the graphical editor, find the FILES pane of the editor, and then open the **Dockerfile** file to open it in the editor.
 
 1.  Copy and paste the following code into the **Dockerfile** file:
 
     ```
-    # Start using the .NET Core 2.2 SDK container image
-    FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine AS build
-
-    # Change current working directory
-    WORKDIR /app
-
-    # Copy existing files from host machine
-    COPY . ./
-
-    # Publish application to the "out" folder
-    RUN dotnet publish --configuration Release --output out
-
-    # Start container by running application DLL
-    ENTRYPOINT ["dotnet", "out/ipcheck.dll"]
+    FROM python:alpine3.7
+    ADD ipcheck.py /
+    CMD python ./ipcheck.py
     ```
 
 1.  Save the **Dockerfile** file by using the menu in the graphical editor or by using the Ctrl+S keyboard shortcut.
@@ -467,7 +427,7 @@ Open the [Azure portal](https://portal.azure.com), navigate to the "PythonAzureE
 1.  Enter the following command, and then select Enter to upload the source code to your container registry and build the container image as a Container Registry task:
 
     ```
-    az acr build --registry $acrName --image ipcheck:latest .
+    az acr build --registry $acrName --image ipcheck-python:latest .
     ```
 
     > **Note**: Wait for the build task to complete before moving forward with this lab.
@@ -524,7 +484,7 @@ In this exercise, you created a .NET console application to display a machine’
 
 1.  From the **Container Registry** blade, find the **Services** section, and then select the **Repositories** link.
 
-1.  In the **Repositories** section, select the **ipcheck** container image repository.
+1.  In the **Repositories** section, select the **ipcheck-python** container image repository.
 
 1.  From the **Repository** blade, select the ellipsis menu associated with the **latest** tag entry.
 
@@ -628,13 +588,14 @@ In this exercise, you created a .NET console application to display a machine’
 
 1.  Select the **Logs** tab, and then find the text logs from the container instance.
 
+1.  Observe the output shoing the compute instance name and the IP address.  This should be similar to the output you saw in the **Cloud Shell**
+
 > **Note**: You can also optionally find the **Events** and **Logs** from the **managedcompute** container instance.
 
-> **Note**: After the application finishes running, the container terminates because it has completed its work. For the manually created container instance, you indicated that a successful exit was acceptable, so the container ran once. The automatically created instance didn't offer this option, and it assumes the container should always be running, so you'll notice repeated restarts of the container.
 
 #### Review
 
-In this exercise, you used multiple methods to deploy a container image to an Azure container instance. By using the manual method, you were also able to customize the deployment further and to run task-based applications as part of a container run.
+In this exercise, you containerized a Python script and used multiple methods to deploy a container image to an Azure container instance. By using the manual method, you were also able to customize the deployment further and to run task-based applications as part of a container run.
 
 ### Exercise 4: Clean up your subscription 
 
