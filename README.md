@@ -398,3 +398,6 @@ Lab05 - Python program to display host name and IP address
 (https://www.geeksforgeeks.org/display-hostname-ip-address-python/)
 
 (https://www.geeksforgeeks.org/python-program-find-ip-address/)
+
+Access Python and AzureRM from the Cloud Shell
+(https://msftstack.wordpress.com/2017/07/30/azure-cloud-shell-python-and-container-instances/)
