@@ -47,20 +47,7 @@ This demo is performed in the Visual Studio code on the virtual machine.
     ```
     .venv\scripts\activate
     ```
-
-1. [] In Visual Studio Code, create a new text file named +++**requirements.txt**+++ in the current folder. 
-
-1. [] Add the following lines to the text file
     
-    ```
-    azure-storage-queue
-
-    ```
-1. [] Using the terminal, install the required Azure libraries for Python:
-
-    ```
-    pip install -r requirements.txt
-    ```
 1. [] Using the same terminal, sign into your Azure account as +++@lab.CloudPortalCredential(LabUser).Username+++ using +++@lab.CloudPortalCredential(LabUser).Password+++ as the password:
 
     ```
@@ -70,18 +57,30 @@ This demo is performed in the Visual Studio code on the virtual machine.
 1. [] Select the **View** > **Command Palette** menu and enter +++**Python: Select Interpreter**+++
     
     >[!TIP] In the dropdown menu select the virtual environment **.venv** that you created earlier.  You can also select the Python interpreter by clicking in the bottom left corner of Visual Studio Code
+
+
 ## Build the console app
 
-### Add packages and using statements
+### Add packages 
 
+1. [] In Visual Studio Code, create a new text file named +++**requirements.txt**+++ in the current folder. 
 
+1. [] Add the following lines to the text file
+    
+    ```
+    azure-cosmos
 
-### Add code to connect to an Azure Cosmos DB account
+    ```
+1. [] Using the terminal, install the required Azure libraries for Python:
 
-1. Add these constants and variables into your `Program` class.
+    ```
+    pip install -r requirements.txt
+    ```
 
+### Modify the code to connect to an Azure Cosmos DB account
 
-    The console displays the message: **End of demo, press any key to exit.** This message confirms that your application made a connection to Azure Cosmos DB. 
+1. Using the left-navigation in **Visual Studio Code** click on the **cosmos_get_started.py** file
+
 
 ## Create a database
 
