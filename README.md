@@ -425,6 +425,8 @@ Lab05 - This worked (https://runnable.com/docker/python/dockerize-your-python-ap
 
 Got Demo04 working based on (https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python#review-the-code)
 
+(https://github.com/Azure-Samples/azure-cosmos-db-python-getting-started/blob/master/cosmos_get_started.py)
+
 Reminder - all samples for Azure and Python (https://github.com/Azure-Samples?q=&type=&language=python)
 
 Demo06 based on (https://github.com/Azure-Samples/ms-identity-python-daemon)
