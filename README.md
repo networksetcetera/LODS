@@ -420,3 +420,11 @@ Second question (ref demo for Module 6 = MSAL and Graph API): Feel free to use t
 Good ref for Lab05 (https://www.wintellect.com/containerize-python-app-5-minutes/)
 
 Lab05 - This worked (https://runnable.com/docker/python/dockerize-your-python-application)
+
+## July 17
+
+Got Demo04 working based on (https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-python#review-the-code)
+
+Reminder - all samples for Azure and Python (https://github.com/Azure-Samples?q=&type=&language=python)
+
+Demo06 based on (https://github.com/Azure-Samples/ms-identity-python-daemon)
