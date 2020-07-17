@@ -14,132 +14,72 @@ This demo is performed in the Visual Studio code on the virtual machine.
 
 ### Retrieve Azure Cosmos DB account keys
 
-1. Login to the Azure portal. [https://portal.azure.com](https://portal.azure.com)
+1.  Login to the Azure portal. [https://portal.azure.com](https://portal.azure.com)
 
-2. Navigate to the Azure Comsos DB account you created in the *Create Azure Cosmos DB resources by using the Azure Portal* demo.
+1.  Navigate to the Azure Comsos DB account you created in the *Create Azure Cosmos DB resources by using the Azure Portal* demo.
 
-3. Select **Keys** in the left navigation panel. Leave the browser open so you can copy the needed information later in this demo.
+1.  Select **Keys** in the left navigation panel. Leave the browser open so you can copy the needed information later in this demo.
 
-### Set up the console application
+### Set up the Python environment
 
-1. Open a PowerShell terminal.
+1.  Open **Visual Studio Code**.
 
-2. Create a folder for the project and change in to the folder.
+1.  Use the **File** menu to open the folder F:/Allfiles/Demos
 
-    ```csharp
-    md az204-cosmosdemo
+1.  Using the left-navigation in **Visual Studio Code** select **New Folder** and name the folder "git-samples"
+
+1.  Right-click on the folder **git-samples** and select **Open in Terminal**
+
+1.  Type the following command to clone a demonstration application
+
+    ```
+    git clone https://github.com/Azure-Samples/azure-cosmos-db-python-getting-started.git
+    ```
+1.  Observe that a new folder was created called **azure-cosmos-db-python-getting-started**
+
+1. [] In Visual Studio Code, open a **Terminal** and create a Virtual Environment for Python:
+
+    ```
+    python -m venv .venv
+    ```
+1.  [] Activate the Python virtual environment
+
+    ```
+    .venv\scripts\activate
+    ```
+
+1. [] In Visual Studio Code, create a new text file named +++**requirements.txt**+++ in the current folder. 
+
+1. [] Add the following lines to the text file
     
-    cd az204-cosmosdemo
+    ```
+    azure-storage-queue
+
+    ```
+1. [] Using the terminal, install the required Azure libraries for Python:
+
+    ```
+    pip install -r requirements.txt
+    ```
+1. [] Using the same terminal, sign into your Azure account as +++@lab.CloudPortalCredential(LabUser).Username+++ using +++@lab.CloudPortalCredential(LabUser).Password+++ as the password:
+
+    ```
+    az login
     ```
 
-3. Create the .NET console app.
-
-    ```csharp
-    dotnet new console
-    ```
-
-4. Open Visual Studio Code and open the *az204-cosmosdemo* folder.
-
-    ```csharp
-    code .
-    ```
-
-5. Open *Program.cs*
-
+1. [] Select the **View** > **Command Palette** menu and enter +++**Python: Select Interpreter**+++
+    
+    >[!TIP] In the dropdown menu select the virtual environment **.venv** that you created earlier.  You can also select the Python interpreter by clicking in the bottom left corner of Visual Studio Code
 ## Build the console app
 
 ### Add packages and using statements
 
-1. Add the `Microsoft.Azure.Cosmos` package to the project in a terminal in VS Code.
 
-    ```ps
-    dotnet add package Microsoft.Azure.Cosmos
-    ```
-
-2. Add using statements to include `Microsoft.Azure.Cosmos` and to enable async operations.
-
-    ```csharp
-    using System.Threading.Tasks;
-    using Microsoft.Azure.Cosmos;
-    ```
-
-3. Change the Main method to enable async.
-
-    ```csharp
-    public static async Task Main(string[] args)
-    ```
-
-4. Delete the existing code from the Main method.
 
 ### Add code to connect to an Azure Cosmos DB account
 
 1. Add these constants and variables into your `Program` class.
 
-    ```csharp
-    public class Program
-    {
-        // The Azure Cosmos DB endpoint for running this sample.
-        private static readonly string EndpointUri = "<your endpoint here>";
-        // The primary key for the Azure Cosmos account.
-        private static readonly string PrimaryKey = "<your primary key>";
-
-        // The Cosmos client instance
-        private CosmosClient cosmosClient;
-
-        // The database we will create
-        private Database database;
-
-        // The container we will create.
-        private Container container;
-
-        // The name of the database and container we will create
-        private string databaseId = "az204Database";
-        private string containerId = "az204Container";
-    }
-    ```
-
-2.  In *Program.cs*, replace `<your endpoint URL>` with the value of **URI**. Replace `<your primary key>` with the value of **PRIMARY KEY**. You get these values from the browser window you left open above.
-
-3.  Below the **Main** method, add a new asynchronous task called **GetStartedDemoAsync**, which instantiates our new `CosmosClient`. 
-
-    ```csharp
-    public async Task CosmosDemoAsync()
-    {
-        // Create a new instance of the Cosmos Client
-        this.cosmosClient = new CosmosClient(EndpointUri, PrimaryKey);
-    }
-    ```
-
-4. Add the following code to the **Main** method to run the **CosmosDemoAsync** asynchronous task. The **Main** method catches exceptions and writes them to the console.
-
-    ```csharp
-    public static async Task Main(string[] args)
-    {
-        try
-        {
-            Console.WriteLine("Beginning operations...\n");
-            Program p = new Program();
-            await p.CosmosDemoAsync();
-
-        }
-        catch (CosmosException de)
-        {
-            Exception baseException = de.GetBaseException();
-            Console.WriteLine("{0} error occurred: {1}", de.StatusCode, de);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error: {0}", e);
-        }
-        finally
-        {
-            Console.WriteLine("End of demo, press any key to exit.");
-            Console.ReadKey();
-        }
-    }
-    ```
-
-5. Save your work and, in a terminal in VS Code, run the `dotnet run` command.
 
     The console displays the message: **End of demo, press any key to exit.** This message confirms that your application made a connection to Azure Cosmos DB. 
 
