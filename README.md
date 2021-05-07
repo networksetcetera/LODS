@@ -435,3 +435,11 @@ Demo06 based on (https://github.com/Azure-Samples/ms-identity-python-daemon)
 
 List of Azure Functions written in Python
 (https://github.com/Azure-Samples/functions-docs-python)
+
+Lab 1 = Web App (Python)
+Lab 2 = Functions (Python)
+Lab 11 = Queues (Python)
+
+Demo 1a = Create a Web App (Portal)
+Demo 1b = Create a static HTML page (Cloud Shell)
+Demo 1c = Create a Web App (Python)
