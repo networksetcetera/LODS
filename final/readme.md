@@ -2,7 +2,7 @@ LODS AZ-204 Python labs
 
 final versions
 
-# Demo 2: Deploying compute workloads by using images and containers (Python)
+# Demo 2: Azure Functions (Python)
 
 # Demo 4: Working with Azure Cosmos DB by using Python
 
