@@ -11,6 +11,9 @@ final versions
 This is an omnibus demo that comprises 2 separate demos. Each subsequent demo requires the preceding demo
 to be completed. It is recommended to combine demos 1 and 2
 
+- Azure Identity
+- MSAL
+
 # Demo 11: Use Python to send and receive messages from a Service Bus queue
 
 # Lab 1: Building a web application on Azure platform as a service offerings  (Python)
