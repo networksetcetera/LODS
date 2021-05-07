@@ -1,19 +1,23 @@
-# Lab: Deploying compute workloads by using images and containers (Python)
+# Lab: Azure Functions (Python)
 # Student Lab Manual
 
 ### Lab Scenario
 
-Your organization is seeking a way to automatically create virtual machines (VMs) to run tasks and immediately terminate. You're tasked with evaluating multiple compute services in Microsoft Azure and determining which service can help you automatically create VMs and install custom software on those machines. As a proof of concept, you have decided to try creating VMs from built-in images and container images so that you can compare the two solutions. To keep your proof of concept simple, you'll create a special “IP check” application written in .NET that you'll automatically deploy to your machines. Your proof of concept will evaluate the Azure Container Instances and Azure Virtual Machines services.
+Demonstrate Azure Functions using Python
 
 ### Objectives
 
 After you complete this lab, you will be able to:
 
-- Create a VM by using the Azure Command-Line Interface (CLI).
+- Create a Storage Account
 
-- Deploy a Docker container image to Azure Container Registry.
+- Create an Azure Function 
 
-- Deploy a container from a container image in Container Registry by using Container Instances.
+- Test the Function locally
+
+- Trigger the Function on a schedule
+
+- Integrate the Function with other services
 
 ### Lab setup
 
