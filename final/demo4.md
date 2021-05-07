@@ -4,7 +4,7 @@ In this demo you'll create a Python app to perform the following operations in A
 
 * Connect to an Azure Cosmos DB account
 * Create a database
-* Create a container
+* Create a (CosmosDB) container
 
 ## Prerequisites
 
