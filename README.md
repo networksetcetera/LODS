@@ -430,3 +430,8 @@ Got Demo04 working based on (https://docs.microsoft.com/en-us/azure/cosmos-db/cr
 Reminder - all samples for Azure and Python (https://github.com/Azure-Samples?q=&type=&language=python)
 
 Demo06 based on (https://github.com/Azure-Samples/ms-identity-python-daemon)
+
+## May 6, 2021
+
+List of Azure Functions written in Python
+(https://github.com/Azure-Samples/functions-docs-python)
