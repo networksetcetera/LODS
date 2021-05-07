@@ -14,5 +14,5 @@ to be completed. It is recommended to combine demos 1 and 2
 # Demo 11: Use Python to send and receive messages from a Service Bus queue
 
 # Lab 1: Building a web application on Azure platform as a service offerings  (Python)
-# Lab 2: Deploying compute workloads by using images and containers (Python)
+# Lab 2: Azure Functions (Python)
 # Lab 5: Deploying compute workloads by using images and containers (Python version)
